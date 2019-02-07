@@ -38,3 +38,9 @@ jar {
     attributes "Main-Class": "$mainClassName"
   }
 }
+
+task stage () {
+    dependsOn ':Cooperator-Backend:assemble'
+}
+
+
