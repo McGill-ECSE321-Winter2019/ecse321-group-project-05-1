@@ -43,4 +43,3 @@ task stage () {
     dependsOn ':Cooperator-Backend:assemble'
 }
 
-
