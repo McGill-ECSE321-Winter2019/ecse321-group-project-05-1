@@ -2,20 +2,11 @@ package ca.mcgill.ecse321.cooperator.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class InitialReport{
-   private String tasks;
-
-public void setTasks(String value) {
-    this.tasks = value;
-}
-@Id
-public String getTasks() {
-    return this.tasks;
-}
-private int workLoad;
+   private int workLoad;
 
 public void setWorkLoad(int value) {
     this.workLoad = value;
@@ -23,15 +14,24 @@ public void setWorkLoad(int value) {
 public int getWorkLoad() {
     return this.workLoad;
 }
-   private Form form;
+private int initialReportID;
+
+public void setInitialReportID(int value) {
+    this.initialReportID = value;
+}
+@Id
+public int getInitialReportID() {
+    return this.initialReportID;
+}
+   private Student student;
    
-   @ManyToOne(optional=false)
-   public Form getForm() {
-      return this.form;
+   @OneToOne(optional=false)
+   public Student getStudent() {
+      return this.student;
    }
    
-   public void setForm(Form form) {
-      this.form = form;
+   public void setStudent(Student student) {
+      this.student = student;
    }
    
    }

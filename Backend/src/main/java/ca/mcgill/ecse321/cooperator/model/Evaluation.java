@@ -2,7 +2,7 @@ package ca.mcgill.ecse321.cooperator.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Evaluation{
@@ -11,7 +11,6 @@ public class Evaluation{
 public void setWorkExperience(String value) {
     this.workExperience = value;
 }
-@Id
 public String getWorkExperience() {
     return this.workExperience;
 }
@@ -39,15 +38,24 @@ public void setCoopCourses(String value) {
 public String getCoopCourses() {
     return this.coopCourses;
 }
-   private Form form;
+private int evaluationID;
+
+public void setEvaluationID(int value) {
+    this.evaluationID = value;
+}
+@Id
+public int getEvaluationID() {
+    return this.evaluationID;
+}
+   private Student student;
    
-   @ManyToOne(optional=false)
-   public Form getForm() {
-      return this.form;
+   @OneToOne(optional=false)
+   public Student getStudent() {
+      return this.student;
    }
    
-   public void setForm(Form form) {
-      this.form = form;
+   public void setStudent(Student student) {
+      this.student = student;
    }
    
    }

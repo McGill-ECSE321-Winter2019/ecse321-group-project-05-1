@@ -2,20 +2,11 @@ package ca.mcgill.ecse321.cooperator.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Acceptance{
-   private String employer;
-
-public void setEmployer(String value) {
-    this.employer = value;
-}
-@Id
-public String getEmployer() {
-    return this.employer;
-}
-private String location;
+   private String location;
 
 public void setLocation(String value) {
     this.location = value;
@@ -28,6 +19,7 @@ private int jobID;
 public void setJobID(int value) {
     this.jobID = value;
 }
+@Id
 public int getJobID() {
     return this.jobID;
 }
@@ -55,15 +47,23 @@ public void setWorkPermit(boolean value) {
 public boolean isWorkPermit() {
     return this.workPermit;
 }
-   private Form form;
+private String employer;
+
+public void setEmployer(String value) {
+    this.employer = value;
+}
+public String getEmployer() {
+    return this.employer;
+}
+   private Student student;
    
-   @ManyToOne(optional=false)
-   public Form getForm() {
-      return this.form;
+   @OneToOne(optional=false)
+   public Student getStudent() {
+      return this.student;
    }
    
-   public void setForm(Form form) {
-      this.form = form;
+   public void setStudent(Student student) {
+      this.student = student;
    }
    
    }
