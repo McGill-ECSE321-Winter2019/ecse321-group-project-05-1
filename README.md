@@ -2,12 +2,12 @@
 ## Co-operator Deliverable 1
 
 ## Table of Contents
-* About(#about)
-* Installation(#installation)
-* Sprint Planning(#sprint-planning)
-* Issues(#issues)
-* Features(#features)
-* Teamwork Report(#teamwork-report)
+* [About](#about)
+* [Installation](#installation)
+* [Sprint Planning](#sprint-planning)
+* [Issues](#issues)
+* [Features](#features)
+* [Teamwork Report](#teamwork-report)
 
 ## About
 The Co-operator is a co-op management tool intregrating features from both mycourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the first deliverable includes: 
