@@ -8,7 +8,7 @@
 * [Teamwork Report](#teamwork-report)
 
 ## About
-The Co-operator is a co-op management tool intregrating features from both mycourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the first deliverable includes: 
+The Co-operator is a co-op management tool intregrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the first deliverable includes: 
 
 1. List of Functional and Non-Functional Requirements
 2. User Case Diagram
