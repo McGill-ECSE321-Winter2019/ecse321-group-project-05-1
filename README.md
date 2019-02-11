@@ -24,11 +24,11 @@ For sprint 1, we decided to complete most parts of the deliverable together as a
 *Met with TA after meeting 1 and meeting 2 for initial feedback and technical questions*
 
 Meeting 1: (~90min)
-*Project Discussion
-*Detailed look at student viewpoint
-*Understanding of functional and non-functional requirements
-*First Draft of Requirments
-*Noted down questions and confusing parts to ask the TA, customer and prof
+- Project Discussion
+- Detailed look at student viewpoint
+- Understanding of functional and non-functional requirements
+- First Draft of Requirments
+- Noted down questions and confusing parts to ask the TA, customer and prof
 
 Meeting 2: (~100min)
 *Finalized requirements
