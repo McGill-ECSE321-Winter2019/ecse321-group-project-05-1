@@ -21,6 +21,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 
 ## Sprint Planning
 For sprint 1, we decided to complete most parts of the deliverable together as a team, since none of us were extremely familiar with the technologies used
+
 *Met with TA after meeting 1 and meeting 2 for initial feedback and technical questions*
 
 Meeting 1: (~90min)
