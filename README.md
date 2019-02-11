@@ -3,10 +3,8 @@
 
 ## Table of Contents
 * [About](#about)
-* [Installation](#installation)
 * [Sprint Planning](#sprint-planning)
 * [Technical Issues](#technical-issues)
-* [Features](#features)
 * [Teamwork Report](#teamwork-report)
 
 ## About
@@ -31,7 +29,7 @@ Meeting 1: (~90min)
 - First Draft of Requirments
 - Noted down questions and confusing parts to ask the TA, customer and prof
 
-Meeting 2: (~100min)
+Meeting 2: (~120min)
 - Finalized requirements
 - Draft of User Case Diagram
 - Discussion of Domain Model and all team members were told to review Domain Modelling slides
@@ -55,16 +53,14 @@ Meeting 5: (~300min)
 - Deployment of our Spring Application to Heroku due to an additional folder that was created in github and not using the backend folder     already provided for this project. Since the settings.gradle file was pointing to backend folder and not the personalized folder, it       would push an error on terminal
 - Generation of Java code through UML, this was fixed by adding the correct packaging to the project
 
-## Features
-
 ## Teamwork Report
 
-|Team member's name|Total hours|Responsibility           |
+|Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
-|Salman            |      hours|Mobile frontend lead    |
-|Tushar            |      hours|Chief Technology Officer|
-|Archit            |           |                        |
-|Kathy             |           |                        |
-|Mert              |           |                        |
+|Salman            |   20 hours|Chief Technology Officier & Worked on persistence layer and Junit Testing
+|Tushar            |   19 hours|User Case Diagrams, UML Diagram |
+|Archit            |   18 hours|UML Diagram, Heroku Deployment and JUnit testing         |
+|Kathy             |   17 hours|User Case Diagrams, Documentation and Project Wiki        |
+|Mert              |   18 hours|UML Diagram and Requirements Model                        |
 
 
