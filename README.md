@@ -5,7 +5,7 @@
 * [About](#about)
 * [Installation](#installation)
 * [Sprint Planning](#sprint-planning)
-* [Issues](#issues)
+* [Technical Issues](#technical-issues)
 * [Features](#features)
 * [Teamwork Report](#teamwork-report)
 
