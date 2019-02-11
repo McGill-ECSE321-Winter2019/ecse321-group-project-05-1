@@ -6,6 +6,8 @@
 * [Sprint Planning](#sprint-planning)
 * [Technical Issues](#technical-issues)
 * [Teamwork Report](#teamwork-report)
+* [File Location](#file-location)
+
 
 ## About
 The Co-operator is a co-op management tool intregrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the first deliverable includes: 
@@ -62,5 +64,9 @@ Meeting 5: (~300min)
 |Archit            |   18 hours|UML Diagram, Heroku Deployment and JUnit testing         |
 |Kathy             |   17 hours|User Case Diagrams, Documentation and Project Wiki        |
 |Mert              |   18 hours|UML Diagram and Requirements Model                        |
+
+## File Location 
+All files related to Persistence layer is located in the Backend Folder
+All other files such as user case diagram, UML screenshot and requirements located in Deliverable1
 
 
