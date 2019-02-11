@@ -66,7 +66,7 @@ Meeting 5: (~300min)
 |Mert              |   18 hours|UML Diagram and Requirements Model                        |
 
 ## File Location 
-All files related to Persistence layer is located in the Backend Folder
-All other files such as user case diagram, UML screenshot and requirements located in Deliverable1
+- All files related to Persistence layer is located in the Backend Folder
+- All other files such as user case diagram, UML screenshot and requirements located in Deliverable 1
 
 
