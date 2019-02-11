@@ -12,10 +12,10 @@
 ## About
 The Co-operator is a co-op management tool intregrating features from both mycourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the first deliverable includes: 
 
-1)List of Functional and Non-Functional Requirements
-2)User Case Diagram
-3)UML Model (Domain Model)
-4)Persistance Layer
+1. List of Functional and Non-Functional Requirements
+2. User Case Diagram
+3. UML Model (Domain Model)
+4. Persistance Layer
 
 Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, UML extension, Heroku & Draw.Io
 
