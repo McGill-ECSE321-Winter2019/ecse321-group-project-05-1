@@ -68,5 +68,6 @@ Meeting 5: (~300min)
 ## File Location 
 - All files related to Persistence layer is located in the Backend Folder
 - All other files such as user case diagram, UML screenshot and requirements located in Deliverable 1
+- Our Heroku link is https://cryptic-coast-32220.herokuapp.com/
 
 
