@@ -25,6 +25,7 @@ public class Acceptance{
 		public void setJobID(int value) {
 		    this.jobID = value;
 		}
+		
 		@Id
 		public int getJobID() {
 		    return this.jobID;
