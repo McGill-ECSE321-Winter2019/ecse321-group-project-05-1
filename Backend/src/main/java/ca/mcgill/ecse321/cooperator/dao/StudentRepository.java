@@ -13,5 +13,5 @@ import ca.mcgill.ecse321.cooperator.model.Student;
 @Repository
 public interface StudentRepository extends CrudRepository<Student, String> {
 	public Student findStudentById(int id); 
-	//public List<Student> getAllStudents();
+	public Student deleteStudentById(int id);
 }

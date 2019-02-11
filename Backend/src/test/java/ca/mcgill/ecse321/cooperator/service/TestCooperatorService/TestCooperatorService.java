@@ -49,21 +49,22 @@ public class TestCooperatorService {
 
 	@Test
 	public void testCreateStudent() {
-		assertEquals(0, service.getAllStudents().size());
+		assertEquals(0, service.getAllStudents().size()); 
 
-		String name = "Varro";
+		String name = "john";
 
 		try {
-			service.createStudent(01, name, "daniel.varro@mcgill.ca", "varro123");
+			service.createStudent(01, name, "john.smith@mcgill.ca", "pass123");
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
-			System.out.println("Student creation failed!");
+			//System.out.println("Student creation failed!");
 			fail();
 		}
 
 		List<Student> allPersons = service.getAllStudents();
-
-		assertEquals(1, allPersons.size()); //checking whether table is created
+		
+		assertEquals(1, allPersons.size()); //checking whether table is created 
+		
 		assertEquals(name, allPersons.get(0).getName()); //checking Reading i.e whether student has the correct name in the database
 	}
 
@@ -88,50 +89,5 @@ public class TestCooperatorService {
 
 	}
 
-    // ... other tests
-	/*
-    @Test
-	public void testRegisterPersonAndEventDoNotExist() {
-		assertEquals(0, service.getAllRegistrations().size());
-
-		String nameP = "Oscar";
-		Person person = new Person();
-		person.setName(nameP);
-		assertEquals(0, service.getAllStudents().size());
-
-		String nameE = "Soccer Game";
-		Calendar c = Calendar.getInstance();
-		c.set(2016, Calendar.OCTOBER, 16, 9, 00, 0);
-		Date eventDate = new Date(c.getTimeInMillis());
-		Time startTime = new Time(c.getTimeInMillis());
-		c.set(2016, Calendar.OCTOBER, 16, 10, 30, 0);
-		Time endTime = new Time(c.getTimeInMillis());
-		Event event = new Event();
-		event.setName(nameE);
-		event.setDate(eventDate);
-		event.setStartTime(startTime);
-		event.setEndTime(endTime);
-		assertEquals(0, service.getAllEvents().size());
-
-		String error = null;
-		try {
-			service.register(person, event);
-		} catch (IllegalArgumentException e) {
-			error = e.getMessage();
-		}
-
-		// check error
-		assertEquals("Person does not exist! Event does not exist!", error);
-
-		// check model in memory
-		assertEquals(0, service.getAllRegistrations().size());
-		assertEquals(0, service.getAllStudents().size());
-		assertEquals(0, service.getAllEvents().size());
-
-	}
-	*/
-
-
-    // ... other tests
 
 }
