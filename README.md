@@ -1,5 +1,5 @@
 # ECSE321 Project Group 5
-*Co-operator deliverable 1* 
+*Co-operator deliverable 1*e
 
 ## Table of Contents
 * [About](#about)
@@ -15,7 +15,7 @@ The Co-operator is a co-op management tool intregrating features from both myCou
 1. List of Functional and Non-Functional Requirements
 2. User Case Diagram
 3. UML Model (Domain Model)
-4. Persistance Layer
+4. Persistence Layer
 
 Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, UML extension, Heroku & Draw.Io
 
@@ -38,15 +38,15 @@ Meeting 2: (~120min)
 
 Meeting 3: (~120min)
 - Created Domain Model
-- Team members split up work to focus on different parts of the deliverable (Domain Modelling and Persistance Layer)
+- Team members split up work to focus on different parts of the deliverable (Domain Modelling and Persistence Layer)
 
 Meeting 4: (~180min)
 - Finalizing Domain model
-- Begin coding persistance layer
+- Begin coding persistence layer
 - Begin documentation part of deliverable
 
 Meeting 5: (~300min)
-- Debugging issues in testing of the persistance layer 
+- Debugging issues in testing of the persistence layer 
 - Finalize documentation
 - Finalize all aspects of sprint 1 for submission
 
