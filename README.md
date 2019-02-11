@@ -51,7 +51,7 @@ Meeting 5: (~300min)
 ## Technical Issues
 - Installation of UML extension on Eclipse
 - Deployment of our Spring Application to Heroku due to an additional folder that was created in github and not using the backend folder     already provided for this project. Since the settings.gradle file was pointing to backend folder and not the personalized folder, it       would push an error on terminal
-- Generation of Java code through UML, this was fixed by adding the correct packaging to the project
+- Issues generating Java code through UML; this was fixed by adding the correct packaging to the project
 
 ## Teamwork Report
 
