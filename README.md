@@ -40,7 +40,7 @@ Meeting 3: (~120min)
 - Team members split up work to focus on different parts of the deliverable (Domain Modelling and Persistance Layer)
 
 Meeting 4: (~180min)
-- Finalizing Domain model 
+- Finalizing Domain model
 - Begin coding persistance layer
 - Begin documentation part of deliverable
 
