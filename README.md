@@ -18,7 +18,7 @@ The Co-operator is a co-op management tool intregrating features from both myCou
 Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, UML extension, Heroku & Draw.Io
 
 ## Sprint Planning
-For sprint 1, we decided to complete most parts of the deliverable together as a team, since none of us were extremely familiar with the technologies used
+For sprint 1, we decided to complete most parts of the deliverable together as a team, since none of us were extremely familiar with the technologies used.
 
 *Met with TA after meeting 1 and meeting 2 for initial feedback and technical questions*
 
