@@ -31,23 +31,23 @@ Meeting 1: (~90min)
 - Noted down questions and confusing parts to ask the TA, customer and prof
 
 Meeting 2: (~100min)
-*Finalized requirements
-*Draft of User Case Diagram
-*Discussion of Domain Model and all team members were told to review Domain Modelling slides
+- Finalized requirements
+- Draft of User Case Diagram
+- Discussion of Domain Model and all team members were told to review Domain Modelling slides
 
 Meeting 3: (~120min)
-*Created Domain Model
-*Team members split up work to focus on different parts of the deliverable (Domain Modelling and Persistance Layer)
+- Created Domain Model
+- Team members split up work to focus on different parts of the deliverable (Domain Modelling and Persistance Layer)
 
 Meeting 4: (~180min)
-*Finalizing Domain model 
-*Begin coding persistance layer
-*Begin documentation part of deliverable
+- Finalizing Domain model 
+- Begin coding persistance layer
+- Begin documentation part of deliverable
 
 Meeting 5: (~300min)
-*Debugging issues in testing of the persistance layer 
-*Finalize documentation
-*Finalize all aspects of sprint 1 for submission
+- Debugging issues in testing of the persistance layer 
+- Finalize documentation
+- Finalize all aspects of sprint 1 for submission
 
 ## Technical Issues
 - Installation of UML extension on Eclipse
