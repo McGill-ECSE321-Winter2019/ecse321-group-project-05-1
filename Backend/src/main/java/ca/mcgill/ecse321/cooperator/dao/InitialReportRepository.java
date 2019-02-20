@@ -10,6 +10,6 @@ import ca.mcgill.ecse321.cooperator.model.InitialReport;
 @Transactional
 @Repository
 public interface InitialReportRepository extends CrudRepository<InitialReport, Integer> {
-	public InitialReport findInitialReportById(int id);
-	public InitialReport deleteInitialReportById(int id);
+	public InitialReport findByInitialReportID(int id);
+	public InitialReport deleteByInitialReportID(int id);
 }

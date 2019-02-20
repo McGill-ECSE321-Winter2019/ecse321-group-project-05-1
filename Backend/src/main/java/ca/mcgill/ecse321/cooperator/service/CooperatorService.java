@@ -52,7 +52,7 @@ public class CooperatorService {
 	//READ
 	@Transactional
 	public Student getStudent(int id) {
-		return studentrepository.findStudentById(id); //returns student with the primary key id
+		return studentrepository.findById(id); //returns student with the primary key id
 	}
 	//RETRIEVE ALL STUDENTS
 	@Transactional
@@ -63,7 +63,7 @@ public class CooperatorService {
 	//DELETE
 	@Transactional
 	public Student updateStudent(int studentId) {
-		return studentrepository.deleteStudentById(studentId);
+		return studentrepository.deleteById(studentId);
 	}
 	
 	//---ACCEPTANCE CLASS---//
@@ -87,13 +87,13 @@ public class CooperatorService {
 	//READ
 	@Transactional
 	public Acceptance getAcceptance(int jobId) {
-		return acceptancerepository.findAcceptanceById(jobId);
+		return acceptancerepository.findByJobID(jobId);
 	}
 	
 	//DELETE
 	@Transactional
 	public Acceptance deleteAcceptance(int jobId) {
-		return acceptancerepository.deleteAcceptanceById(jobId);
+		return acceptancerepository.deleteByJobID(jobId);
 	}
 	
 	//---EVALUATION CLASS---//
@@ -117,13 +117,13 @@ public class CooperatorService {
 	//READ
 	@Transactional
 	public Evaluation getEvaluation(int evaluationID) {
-		return evaluationrepository.findEvaluationById(evaluationID);
+		return evaluationrepository.findByEvaluationID(evaluationID);
 	}
 	
 	//DELETE
 	@Transactional
 	public Evaluation deleteEvaluation(int evaluationId) {
-		return evaluationrepository.deleteEvaluationById(evaluationId);
+		return evaluationrepository.deleteByEvaluationID(evaluationId);
 	}
 	
 	
@@ -142,13 +142,13 @@ public class CooperatorService {
 	//READ
 	@Transactional
 	public InitialReport getInitialReport(int initialReportId) {
-		return initialreportrepository.findInitialReportById(initialReportId);
+		return initialreportrepository.findByInitialReportID(initialReportId);
 	}
 	
 	//DELETE
 	@Transactional
 	public InitialReport deleteInitialReport(int initialReportId) {
-		return initialreportrepository.deleteInitialReportById(initialReportId);
+		return initialreportrepository.deleteByInitialReportID(initialReportId);
 	}
 	
 	
@@ -167,13 +167,13 @@ public class CooperatorService {
 	//READ
 	@Transactional
 	public EmployerContract getEmployerContract(int EmployerContractId) {
-		return employercontractrepository.findEmployerContractById(EmployerContractId);
+		return employercontractrepository.findByEmployerContractID(EmployerContractId);
 	}
 	
 	//DELETE
 	@Transactional
 	public EmployerContract deleteEmployerContract(int EmployerContractId) {
-		return employercontractrepository.deleteEmployerContractById(EmployerContractId);
+		return employercontractrepository.deleteByEmployerContractID(EmployerContractId);
 	}
 	
 	

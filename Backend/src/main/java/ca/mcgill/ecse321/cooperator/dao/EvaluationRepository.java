@@ -10,6 +10,6 @@ import ca.mcgill.ecse321.cooperator.model.Evaluation;
 @Transactional
 @Repository
 public interface EvaluationRepository extends CrudRepository<Evaluation, Integer> {
-	public Evaluation findEvaluationById(int evaluationId);
-	public Evaluation deleteEvaluationById(int evaluationId);
+	public Evaluation findByEvaluationID(int evaluationId);
+	public Evaluation deleteByEvaluationID(int evaluationId);
 }

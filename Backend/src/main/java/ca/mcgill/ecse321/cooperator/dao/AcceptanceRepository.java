@@ -10,6 +10,6 @@ import ca.mcgill.ecse321.cooperator.model.Acceptance;
 @Transactional
 @Repository
 public interface AcceptanceRepository extends CrudRepository<Acceptance, Integer> {
-	public Acceptance findAcceptanceById(int jobId);
-	public Acceptance deleteAcceptanceById(int jobId);
+	public Acceptance findByJobID(int jobId);
+	public Acceptance deleteByJobID(int jobId);
 }

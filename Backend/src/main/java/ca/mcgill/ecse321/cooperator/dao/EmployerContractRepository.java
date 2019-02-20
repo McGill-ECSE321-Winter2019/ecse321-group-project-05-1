@@ -10,7 +10,7 @@ import ca.mcgill.ecse321.cooperator.model.EmployerContract;
 @Transactional
 @Repository
 public interface EmployerContractRepository extends CrudRepository<EmployerContract, Integer> {
-	public EmployerContract findEmployerContractById(int id);
-	public EmployerContract deleteEmployerContractById(int id);
+	public EmployerContract findByEmployerContractID(int id);
+	public EmployerContract deleteByEmployerContractID(int id);
 	
 }
