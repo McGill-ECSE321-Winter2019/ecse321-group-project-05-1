@@ -1,5 +1,5 @@
 # ECSE321 Project Group 5
-*Co-operator deliverable 2
+*Co-operator deliverable 2*
 
 ## Table of Contents
 * [About](#about)
