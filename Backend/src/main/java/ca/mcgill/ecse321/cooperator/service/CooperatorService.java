@@ -9,15 +9,10 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ca.mcgill.ecse321.cooperator.dao.AcceptanceRepository;
-import ca.mcgill.ecse321.cooperator.dao.EmployerContractRepository;
-import ca.mcgill.ecse321.cooperator.dao.EvaluationRepository;
-import ca.mcgill.ecse321.cooperator.dao.InitialReportRepository;
+
+import ca.mcgill.ecse321.cooperator.dao.CoopRepository;
 import ca.mcgill.ecse321.cooperator.dao.StudentRepository;
-import ca.mcgill.ecse321.cooperator.model.Acceptance;
-import ca.mcgill.ecse321.cooperator.model.EmployerContract;
-import ca.mcgill.ecse321.cooperator.model.Evaluation;
-import ca.mcgill.ecse321.cooperator.model.InitialReport;
+import ca.mcgill.ecse321.cooperator.model.Coop;
 import ca.mcgill.ecse321.cooperator.model.Student;
 
 @Service
@@ -25,34 +20,42 @@ public class CooperatorService {
 	@Autowired
 	StudentRepository studentrepository;
 	@Autowired
-	AcceptanceRepository acceptancerepository;
-	@Autowired
-	EvaluationRepository evaluationrepository;
-	@Autowired
-	InitialReportRepository initialreportrepository;
-	@Autowired
-	EmployerContractRepository employercontractrepository;
+	CoopRepository cooprepository;
 	
 	
 	//---STUDENT CLASS---//
 	//CREATE
 	@Transactional
-	public Student createStudent(int id, String name, String email, String password) {
-		Student student = new Student();
-		student.setId(id);
-		student.setName(name);
-		student.setEmail(email);
-		student.setPassword(password);
-		student.setProgress(0); //progress initialized to 0 when student object is created
+	public Student createStudent(int mcgillID, String name, String email, int progress, boolean isEnrolled, boolean reportSubmitted){
+		if (name == null || name.trim().length() == 0) {
+			throw new IllegalArgumentException("Student name cannot be empty!");
+		} 
+		if (mcgillID == 0) {
+			throw new IllegalArgumentException("ID cannot be empty!");
+		}
+		if (email == null || email.trim().length() == 0) {
+			throw new IllegalArgumentException("Email cannot be empty!");
+		}
 		
+		Student student = new Student();
+		student.setName(name);
+		student.setMcgillID(mcgillID);
+		student.setEmail(email);
+		student.setProgress(progress);
+		student.setIsEnrolled(isEnrolled);
+		student.setReportSubmitted(reportSubmitted);
 		studentrepository.save(student); //saves student into the database
 		
 		return student;
 	}
+	
 	//READ
 	@Transactional
-	public Student getStudent(int id) {
-		return studentrepository.findById(id); //returns student with the primary key id
+	public Student getStudent(int mcgillID) {
+		if (mcgillID == 0) {
+			throw new IllegalArgumentException("ID cannot be 0");
+		}
+		return studentrepository.findBymcgillID(mcgillID); //returns student with the primary key id
 	}
 	//RETRIEVE ALL STUDENTS
 	@Transactional
@@ -62,122 +65,78 @@ public class CooperatorService {
 	
 	//DELETE
 	@Transactional
-	public Student updateStudent(int studentId) {
-		return studentrepository.deleteById(studentId);
+	public Student deleteStudent(int mcgillID) {
+		return studentrepository.deleteBymcgillID(mcgillID);
 	}
 	
-	//---ACCEPTANCE CLASS---//
+	
+	
+	//---COOP CLASS---//
 	//CREATE
 	@Transactional
-	public Acceptance createAcceptance(String location, int jobId, String date, String semester, String employer, boolean workpermit) {
-		Acceptance acceptance =  new Acceptance();
-		acceptance.setDate(date);
-		acceptance.setEmployer(employer);
-		acceptance.setJobID(jobId); //PRIMARY KEY
-		acceptance.setLocation(location);
-		acceptance.setSemester(semester);
-		acceptance.setWorkPermit(workpermit);
+	public Coop createCoop(int coopID, String location, String startDate, String endDate, String semester, String companyName, boolean workPermit, String employerContract, int workLoad, String initialReport, String workExperience, String evaluationReport, String technologies, String coopCourses, String technicalReport, Student s) {	
+		if (coopID == 0) {
+			throw new IllegalArgumentException("ID cannot be empty!");
+		}
+		if (location == null) {
+			throw new IllegalArgumentException("Location cannot be empty!");
+		}
+		if (startDate == null) {
+			throw new IllegalArgumentException("Start Date cannot be empty!");
+		}
+		if (endDate == null) {
+			throw new IllegalArgumentException("End Date cannot be empty!");
+		}
+		if (semester == null) {
+			throw new IllegalArgumentException("Semester cannot be empty!");
+		}
+		if (companyName == null) {
+			throw new IllegalArgumentException("Company Name cannot be empty!");
+		}
+		if (s == null) {
+			throw new IllegalArgumentException("You have to specify a student!");
+		}
 		
-		acceptancerepository.save(acceptance);
+		Coop coop = new Coop();
+		coop.setCoopID(coopID);
+		coop.setLocation(location);
+		coop.setStartDate(startDate);
+		coop.setEndDate(endDate);
+		coop.setSemester(semester);
+		coop.setCompanyName(companyName);
+		coop.setWorkPermit(workPermit);
+		coop.setEmployerContract(employerContract);
+		coop.setWorkLoad(workLoad);
+		coop.setInitialReport(initialReport);
+		coop.setWorkExperience(workExperience);
+		coop.setEvaluationReport(evaluationReport);
+		coop.setTechnologies(technologies);
+		coop.setCoopCourses(coopCourses);
+		coop.setTechnicalReport(technicalReport);
+		coop.setStudent(s);
+		cooprepository.save(coop); //saves student into the database
 		
-		return acceptance;
-		
+		return coop;
 	}
 	
 	//READ
 	@Transactional
-	public Acceptance getAcceptance(int jobId) {
-		return acceptancerepository.findByJobID(jobId);
+	public Coop getCoop(int coopID) {
+		return cooprepository.findBycoopID(coopID); //returns student with the primary key id
+	}
+	//RETRIEVE ALL COOPS
+	@Transactional
+	public List<Coop> getAllCoops() {
+		return toList(cooprepository.findAll());
 	}
 	
 	//DELETE
 	@Transactional
-	public Acceptance deleteAcceptance(int jobId) {
-		return acceptancerepository.deleteByJobID(jobId);
+	public Coop deleteCoop(int coopID) {
+		return cooprepository.deleteBycoopID(coopID);
 	}
 	
-	//---EVALUATION CLASS---//
-	//CREATE
-	@Transactional
-	public Evaluation createEvaluation(String workExperience, String evaluation, String technologies, String coopCourses, int evaluationID) {
-		Evaluation eval = new Evaluation();
-		
-		eval.setCoopCourses(coopCourses);
-		eval.setEvaluation(evaluation);
-		eval.setEvaluationID(evaluationID); //PRIMARY KEY
-		eval.setTechnologies(technologies);
-		eval.setWorkExperience(workExperience);
-		
-		evaluationrepository.save(eval);
-		
-		return eval;
-		
-	}
-	
-	//READ
-	@Transactional
-	public Evaluation getEvaluation(int evaluationID) {
-		return evaluationrepository.findByEvaluationID(evaluationID);
-	}
-	
-	//DELETE
-	@Transactional
-	public Evaluation deleteEvaluation(int evaluationId) {
-		return evaluationrepository.deleteByEvaluationID(evaluationId);
-	}
-	
-	
-	//---INITIAL REPORT CLASS---//
-	//CREATE
-	@Transactional
-	public InitialReport createInitialReport(int workLoad, int InitialReportId) {
-		InitialReport initialReport = new InitialReport();
-		initialReport.setInitialReportID(InitialReportId); //PRIMARY KEY
-		initialReport.setWorkLoad(workLoad);
-		
-		initialreportrepository.save(initialReport);
-		return initialReport;
-	}
-	
-	//READ
-	@Transactional
-	public InitialReport getInitialReport(int initialReportId) {
-		return initialreportrepository.findByInitialReportID(initialReportId);
-	}
-	
-	//DELETE
-	@Transactional
-	public InitialReport deleteInitialReport(int initialReportId) {
-		return initialreportrepository.deleteByInitialReportID(initialReportId);
-	}
-	
-	
-	//---EMPLOYER CONTRACT CLASS ---//
-	//CREATE
-	@Transactional
-	public EmployerContract createEmployerContract(String contract, int employerContractId) {
-		EmployerContract employerContract = new EmployerContract();
-		employerContract.setContract(contract);
-		employerContract.setEmployerContractID(employerContractId);
-		
-		employercontractrepository.save(employerContract);
-		return employerContract;
-	}
-	
-	//READ
-	@Transactional
-	public EmployerContract getEmployerContract(int EmployerContractId) {
-		return employercontractrepository.findByEmployerContractID(EmployerContractId);
-	}
-	
-	//DELETE
-	@Transactional
-	public EmployerContract deleteEmployerContract(int EmployerContractId) {
-		return employercontractrepository.deleteByEmployerContractID(EmployerContractId);
-	}
-	
-	
-	//Helper method
+ 	//Helper method
 	private <T> List<T> toList(Iterable<T> iterable){
 		List<T> resultList = new ArrayList<T>();
 		for (T t : iterable) {

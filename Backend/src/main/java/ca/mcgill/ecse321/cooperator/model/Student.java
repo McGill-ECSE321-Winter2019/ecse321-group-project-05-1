@@ -1,119 +1,79 @@
 package ca.mcgill.ecse321.cooperator.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Student{
-	private int id;
+private Coop coop;
+   
+   @OneToOne(mappedBy="student", cascade = CascadeType.ALL)
+   public Coop getCoop() {
+      return this.coop;
+   }
+   
+   public void setCoop(Coop coop) {
+      this.coop = coop;
+   }
+   
+private boolean reportSubmitted;
 
-	
-	public void setId(int value) {
-	    this.id = value;
+public void setReportSubmitted(boolean value) {
+	this.reportSubmitted = value;
+}
+public boolean isReportSubmitted() {
+	return this.reportSubmitted;
+}
+
+private int mcgillID;
+
+public void setMcgillID(int value) {
+	    this.mcgillID = value;
 	}
-	@Id
-	public int getId() {
-	    return this.id;
+@Id
+public int getMcgillID() {
+	    return this.mcgillID;
 	}
 	
 	
-	private String name;
-	
-	
-	public void setName(String value) {
+private String name;
+
+public void setName(String value) {
 	    this.name = value;
 	}
-	public String getName() {
+public String getName() {
 	    return this.name;
 	}
 	
 	
-	private String email;
-	
-	
-	
-	public void setEmail(String value) {
+private String email;
+
+public void setEmail(String value) {
 	    this.email = value;
 	}
-	public String getEmail() {
+public String getEmail() {
 	    return this.email;
 	}
 	
 	
-	private String password;
-	
-	
-	
-	public void setPassword(String value) {
-	    this.password = value;
+private boolean isEnrolled;
+
+public void setIsEnrolled(boolean value) {
+	    this.isEnrolled = value;
 	}
-	public String getPassword() {
-	    return this.password;
+public boolean isIsEnrolled() {
+	    return this.isEnrolled;
 	}
 	
 	
-	private int progress;
-	
-	
-	
-	public void setProgress(int value) {
+private int progress;
+
+public void setProgress(int value) {
 	    this.progress = value;
 	}
-	public int getProgress() {
+public int getProgress() {
 	    return this.progress;
 	}
-	   
-	
-	private Acceptance acceptance;
-	   
-   
-	@OneToOne(mappedBy="student" , optional=false)
-   public Acceptance getAcceptance() {
-      return this.acceptance;
-   }
-   
-   public void setAcceptance(Acceptance acceptance) {
-      this.acceptance = acceptance;
-   }
-   
-   
-   private InitialReport initialReport;
-   
-   
-   @OneToOne(mappedBy="student" , optional=false)
-   public InitialReport getInitialReport() {
-      return this.initialReport;
-   }
-   
-   public void setInitialReport(InitialReport initialReport) {
-      this.initialReport = initialReport;
-   }
-   
-   
-   private EmployerContract employerContract;
-   
-   
-   @OneToOne(mappedBy="student" , optional=false)
-   public EmployerContract getEmployerContract() {
-      return this.employerContract;
-   }
-   
-   public void setEmployerContract(EmployerContract employerContract) {
-      this.employerContract = employerContract;
-   }
-   
-   
-   private Evaluation evaluation;
-   
-   
-   @OneToOne(mappedBy="student" , optional=false)
-   public Evaluation getEvaluation() {
-      return this.evaluation;
-   }
-   
-   public void setEvaluation(Evaluation evaluation) {
-      this.evaluation = evaluation;
-   }
-   
 }

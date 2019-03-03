@@ -11,7 +11,7 @@ import ca.mcgill.ecse321.cooperator.model.Student;
 
 @Transactional
 @Repository
-public interface StudentRepository extends CrudRepository<Student, String> {
-	public Student findById(int id); 
-	public Student deleteById(int id);
+public interface StudentRepository extends CrudRepository<Student, Integer> {
+	public Student findBymcgillID(int mcgillID); 
+	public Student deleteBymcgillID(int mcgillID);
 }
