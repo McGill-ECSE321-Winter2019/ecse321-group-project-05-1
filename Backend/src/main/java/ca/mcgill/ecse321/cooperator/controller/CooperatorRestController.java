@@ -5,9 +5,14 @@ import ca.mcgill.ecse321.cooperator.service.CooperatorService;
 import ca.mcgill.ecse321.cooperator.dto.StudentDto;
 import ca.mcgill.ecse321.cooperator.model.Student;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +26,8 @@ public class CooperatorRestController {
 	private CooperatorService service;
 	
 	//Post request to create a student object
-	@PostMapping(value = { "/students/{id}", "/students/{id}/" })
-	public StudentDto createStudent(@PathVariable("mcgillID") int mcgillID, 
+	@PostMapping(value = { "/students", "/students/" })
+	public StudentDto createStudent(@RequestParam("mcgillID") int mcgillID, 
 			@RequestParam("name") String name, @RequestParam("email") String email,
 			@RequestParam("progress") int progress, @RequestParam("isEnrolled") boolean isEnrolled,
 			@RequestParam("reportSubmitted") boolean reportSubmitted) throws IllegalArgumentException {
@@ -31,9 +36,9 @@ public class CooperatorRestController {
 		return convertToDto(student);
 	}
 	
-	
-	@PostMapping(value = { "/students/{coopID}", "/students/{coopID}/" })
-	public CoopDto createCoop(@PathVariable("coopID") int coopID, @RequestParam("location") String location,
+	//Post request to create a Coop object
+	@PostMapping(value = { "/students/{mcgillID}/{coopID}", "/students/{mcgillID}/{coopID}/" })
+	public CoopDto createCoop(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("location") String location,
 			@RequestParam("startDate") String startDate, @RequestParam("endDate") String endDate,
 			@RequestParam("semester") String semester, @RequestParam("companyName") String companyName,
 			@RequestParam("workPermit") boolean workPermit, @RequestParam("employerContract") String employerContract,
@@ -44,6 +49,73 @@ public class CooperatorRestController {
 			
 			Coop coop = service.createCoop(coopID, location, startDate, endDate, semester, companyName, workPermit, employerContract, workLoad, initialReport, workExperience, evaluationReport, technologies, coopCourses, technicalReport, s);
 			return convertToDto(coop);
+	}
+	
+	//GET: retrieve a particular student's general info
+	@GetMapping(value = {"/students1/{mcgillID}", "/students1/{mcgillID}/"})
+	public StudentDto getStudent(@PathVariable("mcgillID") int mcgillID) {
+		Student student = service.getStudent(mcgillID);
+		
+		if (student == null) {
+			throw new IllegalArgumentException("There is no student associated with that id!");
+		}
+		
+		return convertToDto(student);
+	}
+	
+	//GET: retrieve coop info of a particular student
+	@GetMapping(value = {"/students/{mcgillID}/{coopID}", "/students/{mcgillID}/{coopID}/"})
+	public CoopDto getCoop(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID) {
+		Coop coop = service.getCoop(coopID);
+		
+		if (coop == null) {
+			throw new IllegalArgumentException("There is no Coop associated with that id!");
+		}
+		return convertToDto(coop);
+	}
+	
+	//PUT: submit initial report of a particular student within first two weeks
+	//We take the entire report as an input string
+	@PutMapping(value = { "/students/{mcgillID}/{coopID}/initialReport", "/students/{mcgillID}/{coopID}/initialReport/" })
+	public void submitInitialReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("initialReport") String initialReport) {
+		Coop coop = service.getCoop(coopID);
+		coop.setInitialReport(initialReport);
+		coop.getStudent().setProgress(50);
+	}
+	
+	//PUT: submit technical report during the coop
+	//We take the entire report as an input string
+	@PutMapping(value = { "/students/{mcgillID}/{coopID}/technicalReport", "/students/{mcgillID}/{coopID}/technicalReport/" })
+	public void submitTechnicalReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("initialReport") String technicalReport) {
+		Coop coop = service.getCoop(coopID);
+		coop.setTechnicalReport(technicalReport);
+		coop.getStudent().setProgress(75);
+	}
+	
+	//PUT: submit evaluation report at the end of coop
+	//We take the entire report as an input string
+	@PutMapping(value = { "/students/{mcgillID}/{coopID}/evaluationReport", "/students/{mcgillID}/{coopID}/evaluationReport/" })
+	public void submitEvaluationReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("initialReport") String evaluationReport) {
+		Coop coop = service.getCoop(coopID);
+		coop.setEvaluationReport(evaluationReport);
+		coop.getStudent().setProgress(100);
+	}
+	
+	//GET: check student progress
+	@GetMapping(value = {"/students/{mcgillID}", "/students/{mcgillID}/"})
+	public int getProgress(@PathVariable("mcgillID") int mcgillID) {
+		Student student = service.getStudent(mcgillID);
+		return student.getProgress();
+	}
+	
+	//GET: return all students
+	@GetMapping(value = { "/students", "/students/" })
+	public List<StudentDto> getAllStudents() {
+		List<StudentDto> studentDtos = new ArrayList<>();
+		for (Student student : service.getAllStudents()) {
+			studentDtos.add(convertToDto(student));
+		}
+		return studentDtos;
 	}
 	
 	private StudentDto convertToDto(Student s) {
