@@ -39,9 +39,9 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
 |Salman            |      hours|Persistence layer & Build system  |
-|Tushar            |      hours|Documentation |
-|Archit            |      hours|Unit Testing & Integration Testing        |
-|Kathy             |      hours|Documentation & Project Wiki        |
+|Tushar            |   16 hours|Documentation & Testing |
+|Archit            |      hours|Unit Testing & Integration Testing |
+|Kathy             |      hours|Documentation & Project Wiki  |
 |Mert              |      hours|Documentation & Software Quality Assurance Report         |
 
 ## File Location 
