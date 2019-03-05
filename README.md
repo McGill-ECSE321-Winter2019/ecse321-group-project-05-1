@@ -47,6 +47,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
 - Link to our Heroku: https://cryptic-coast-32220.herokuapp.com/
-- Link to our Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki
+- Link to our Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Project-Report-Deliverable-2
+- Link to our Test Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Software-Quality-Assurance-Report
 
 
