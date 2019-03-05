@@ -15,15 +15,15 @@ The Co-operator is a co-op management tool intregrating features from both myCou
 3. Integration Testing 
 4. Build System
 
-Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, UML Lab, ZenHub, Heroku & Draw.Io
+Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, ZenHub, Heroku, Postman, Local PostgreSQL server, Travis CI
 
 ## Technical Issues
-- Installation of UML Lab
-- Deployment of our Spring Application to Heroku due to an additional folder that was created in github and not using the backend folder     already provided for this project. Since the settings.gradle file was pointing to backend folder and not the personalized folder, it       would push an error on terminal
-- Issues generating Java code through UML; this was fixed by adding the correct packaging to the project
+- Installed Postman to test our REST methods locally
+- We created a postgreSQL database locally to check if our post requests worked
+- We had to reconfigure our database connection 
 
 ## Teamwork Report
-#Deliverable 1
+# Deliverable 1
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
@@ -33,7 +33,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 |Kathy             |   17 hours|User Case Diagrams, Documentation and Project Wiki        |
 |Mert              |   18 hours|UML Diagram and Requirements Model                        |
 
-#Deliverable 2
+# Deliverable 2
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
@@ -44,8 +44,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 |Mert              |      hours|Documentation & Software Quality Assurance Report         |
 
 ## File Location 
-- All files related to Persistence layer is located in the Backend Folder
-- All other files such as user case diagram, UML screenshot and requirements located in Deliverable 1
+- Link to our REST controller class are included in the Backend folder under file controller
 - Link to our Heroku: https://cryptic-coast-32220.herokuapp.com/
 - Link to our Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki
 
