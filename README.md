@@ -41,7 +41,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 |Salman            |   32 hours|Model redesign, Persistence, REST API, Database Testing  |
 |Tushar            |   16 hours|Documentation & Testing |
 |Archit            |   40 hours|New UML, Persistence, JUnit Testing, REST, Travis CI |
-|Kathy             |      hours|Documentation & Project Wiki  |
+|Kathy             |   17 hours|Documentation & Project Wiki  |
 |Mert              |   17 hours|Documentation & Software Quality Assurance Report         |
 
 ## File Location 
