@@ -10,10 +10,11 @@
 ## About
 The Co-operator is a co-op management tool intregrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the second deliverable includes: 
 
-1. Software Quality Assurance Report
-2. Unit Testing of Backend 
-3. Integration Testing 
-4. Build System
+1. REST API implementation
+2. Software Quality Assurance Report
+3. Unit Testing of Backend 
+4. Integration Testing 
+5. Build System
 
 Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, ZenHub, Heroku, Postman, Local PostgreSQL server, Travis CI
 
