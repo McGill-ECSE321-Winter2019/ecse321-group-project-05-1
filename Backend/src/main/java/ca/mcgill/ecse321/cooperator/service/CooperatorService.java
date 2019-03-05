@@ -21,8 +21,8 @@ public class CooperatorService {
 	StudentRepository studentrepository;
 	@Autowired
 	CoopRepository cooprepository;
+	  
 	 
-	
 	//---STUDENT CLASS---//
 	//CREATE
 	@Transactional
@@ -36,7 +36,7 @@ public class CooperatorService {
 		if (email == null || email.trim().length() == 0) {
 			throw new IllegalArgumentException("Email cannot be empty!");
 		}
-		
+		 
 		Student student = new Student();
 		student.setName(name);
 		student.setMcgillID(mcgillID);
@@ -48,7 +48,7 @@ public class CooperatorService {
 		
 		return student;
 	}
-	
+	  
 	//READ
 	@Transactional
 	public Student getStudent(int mcgillID) {
@@ -74,7 +74,7 @@ public class CooperatorService {
 	//---COOP CLASS---//
 	//CREATE
 	@Transactional
-	public Coop createCoop(int coopID, String location, String startDate, String endDate, String semester, String companyName, boolean workPermit, String employerContract, int workLoad, String initialReport, String workExperience, String evaluationReport, String technologies, String coopCourses, String technicalReport, Student s) {	
+	public Coop createCoop(int coopID, String location, String startDate, String endDate, String semester, String companyName, boolean workPermit, String employerContract, int workLoad, String initialReport, String workExperience, String evaluationReport, String technologies, String coopCourses, String technicalReport, int fkStudentMcgillID) {	
 		if (coopID == 0) {
 			throw new IllegalArgumentException("ID cannot be empty!");
 		}
@@ -93,8 +93,8 @@ public class CooperatorService {
 		if (companyName == null) {
 			throw new IllegalArgumentException("Company Name cannot be empty!");
 		}
-		if (s == null) {
-			throw new IllegalArgumentException("You have to specify a student!");
+		if (fkStudentMcgillID == 0) {
+			throw new IllegalArgumentException("Foreign key cannot be 0!");
 		}
 		
 		Coop coop = new Coop();
@@ -113,7 +113,7 @@ public class CooperatorService {
 		coop.setTechnologies(technologies);
 		coop.setCoopCourses(coopCourses);
 		coop.setTechnicalReport(technicalReport);
-		coop.setStudent(s);
+		coop.setStudent(studentrepository.findBymcgillID(fkStudentMcgillID));
 		cooprepository.save(coop); //saves student into the database
 		
 		return coop;

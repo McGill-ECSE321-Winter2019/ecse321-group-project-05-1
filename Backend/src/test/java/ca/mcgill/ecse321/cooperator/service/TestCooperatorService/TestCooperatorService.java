@@ -73,7 +73,7 @@ public class TestCooperatorService {
 		
 		assertEquals("john", allStudents.get(0).getName()); //checking Reading i.e whether student has the correct name in the database
 	}
-
+ 
 	@Test
 	public void testCreateStudentNameNull() {
 		assertEquals(0, service.getAllStudents().size());
@@ -141,7 +141,7 @@ public class TestCooperatorService {
 		assertEquals(0, service.getAllCoops().size()); 
 		Student s = service.createStudent(1, "john", "john.smith@mail.mcgill.ca", 0, true, false);
 		try {
-			service.createCoop(12345, "Montreal", "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s);
+			service.createCoop(12345, "Montreal", "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s.getMcgillID());
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			fail();
@@ -161,7 +161,7 @@ public class TestCooperatorService {
 		int coopID = 0;
 		String error = null;
 		try {
-			service.createCoop(coopID, "Montreal", "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s);
+			service.createCoop(coopID, "Montreal", "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s.getMcgillID());
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			error = e.getMessage();
@@ -180,7 +180,7 @@ public class TestCooperatorService {
 		String location = null;
 		String error = null;
 		try {
-			service.createCoop(12345, location, "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s);
+			service.createCoop(12345, location, "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s.getMcgillID());
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			error = e.getMessage();
@@ -199,7 +199,7 @@ public class TestCooperatorService {
 		String startDate = null;
 		String error = null;
 		try {
-			service.createCoop(12345, "Montreal", startDate, "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s);
+			service.createCoop(12345, "Montreal", startDate, "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s.getMcgillID());
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			error = e.getMessage();
@@ -218,7 +218,7 @@ public class TestCooperatorService {
 		String endDate = null;
 		String error = null;
 		try {
-			service.createCoop(12345, "Montreal", "01052019", endDate, "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s);
+			service.createCoop(12345, "Montreal", "01052019", endDate, "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", s.getMcgillID());
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			error = e.getMessage();
@@ -237,7 +237,7 @@ public class TestCooperatorService {
 		String semester = null;
 		String error = null;
 		try {
-			service.createCoop(12345, "Montreal", "01052019", "31082019", semester, "ElementAI", true, "", 0, "", "", "", "", "", "", s);
+			service.createCoop(12345, "Montreal", "01052019", "31082019", semester, "ElementAI", true, "", 0, "", "", "", "", "", "", s.getMcgillID());
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			error = e.getMessage();
@@ -256,7 +256,7 @@ public class TestCooperatorService {
 		String company = null;
 		String error = null;
 		try {
-			service.createCoop(12345, "Montreal", "01052019", "31082019", "summer", company, true, "", 0, "", "", "", "", "", "", s);
+			service.createCoop(12345, "Montreal", "01052019", "31082019", "summer", company, true, "", 0, "", "", "", "", "", "", s.getMcgillID());
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			error = e.getMessage();
@@ -269,18 +269,18 @@ public class TestCooperatorService {
 	}
 	
 	@Test
-	public void testCreateCoopStudentNull() {
+	public void testCreateCoopStudentIDNull() {
 		assertEquals(0, service.getAllCoops().size()); 
-		Student r = null;
+		int fkStudentMcgillID = 0;
 		String error = null;
 		try {
-			service.createCoop(12345, "Montreal", "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", r);
+			service.createCoop(12345, "Montreal", "01052019", "31082019", "summer", "ElementAI", true, "", 0, "", "", "", "", "", "", fkStudentMcgillID);
 		} catch (IllegalArgumentException e) {
 			// Check that no error occurred
 			error = e.getMessage();
 		}
 
-		assertEquals("You have to specify a student!", error);
+		assertEquals("Foreign key cannot be 0!", error);
 		
 		assertEquals(0, service.getAllCoops().size()); //checking whether table is created 
 		

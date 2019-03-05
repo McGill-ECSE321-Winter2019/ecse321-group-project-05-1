@@ -23,7 +23,7 @@ public class Coop{
 	public String getLocation() {
 	    return this.location;
 	}
-	
+	 
 	private String startDate;
 	public void setStartDate(String value) {
 	    this.startDate = value;
