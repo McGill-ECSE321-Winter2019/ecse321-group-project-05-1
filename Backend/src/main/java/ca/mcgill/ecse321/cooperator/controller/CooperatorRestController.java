@@ -249,7 +249,7 @@ public class CooperatorRestController {
 	//									HELPER STUDENT METHODS
 	//
 	// =================================================================================================================
-	
+	 
 	private StudentDto convertToDto(Student s) {
 		if (s == null) {
 			throw new IllegalArgumentException("There is no such student!");
