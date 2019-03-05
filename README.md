@@ -38,7 +38,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
-|Salman            |      hours|Persistence layer & Build system  |
+|Salman            |   32  hours|Persistence layer & Build system  |
 |Tushar            |   16 hours|Documentation & Testing |
 |Archit            |   40 hours|New UML, Persistence, JUnit Testing, REST, Travis CI |
 |Kathy             |      hours|Documentation & Project Wiki  |
