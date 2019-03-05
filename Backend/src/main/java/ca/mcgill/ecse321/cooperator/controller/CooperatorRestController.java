@@ -24,7 +24,7 @@ import ca.mcgill.ecse321.cooperator.model.Coop;
 @CrossOrigin(origins = "*")
 @RestController
 public class CooperatorRestController {
-	
+	   
 	@Autowired
 	private CooperatorService service;
 	
