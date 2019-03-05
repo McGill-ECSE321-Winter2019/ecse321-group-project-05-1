@@ -24,7 +24,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 - We had to reconfigure our database connection 
 
 ## Teamwork Report
-# Deliverable 1
+### Deliverable 1
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
@@ -34,7 +34,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 |Kathy             |   17 hours|User Case Diagrams, Documentation and Project Wiki        |
 |Mert              |   18 hours|UML Diagram and Requirements Model                        |
 
-# Deliverable 2
+### Deliverable 2
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
