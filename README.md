@@ -42,7 +42,7 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 |Tushar            |   16 hours|Documentation & Testing |
 |Archit            |      hours|Unit Testing & Integration Testing |
 |Kathy             |      hours|Documentation & Project Wiki  |
-|Mert              |      hours|Documentation & Software Quality Assurance Report         |
+|Mert              |   17 hours|Documentation & Software Quality Assurance Report         |
 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
