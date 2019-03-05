@@ -49,5 +49,5 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 - Link to our Heroku: https://cryptic-coast-32220.herokuapp.com/
 - Link to our Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Project-Report-Deliverable-2
 - Link to our Test Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Software-Quality-Assurance-Report
-- Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
+- Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added) is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
 
