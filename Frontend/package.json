@@ -17,6 +17,7 @@
     "bootstrap-vue": "latest",
     "popper.js": "^1.12.9",
     "vue": "^2.5.2",
+    "vue-fragment": "^1.5.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

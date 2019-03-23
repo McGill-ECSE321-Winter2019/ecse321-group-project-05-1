@@ -1,0 +1,88 @@
+<template>
+<div id="newcoop">
+<table align="center">
+<tr>
+<td>CoopID</td>
+<td><input type="number" placeholder="ID number"></td>
+</tr>
+<tr>
+<td>Location</td>
+<td><input type="text" placeholder="Location of Coop"></td>
+</tr> 
+<tr>
+<td>Start Date</td>
+<td><input type="date" placeholder="Starting date"></td>
+</tr>
+<tr>
+<td>End Date</td>
+<td><input type="date" placeholder="Ending date"></td>
+</tr>
+<tr>
+<td>Company Name</td>
+<td><input type="text" placeholder="Company name"></td>
+</tr>
+<tr>
+<td>Work Permit</td>
+<td><input type="text" placeholder="Permit"></td>
+</tr>
+<tr>
+<td>Employer Contract</td>
+<td><input type="url" placeholder="Paste Drive link"></td>
+</tr>
+<tr>
+<td>Instructor ID</td>
+<td><input type="number" placeholder="ID number"></td>
+</tr>
+<tr>
+<td></td><td><button>Add Coop</button></td>
+</tr>
+<tr>
+<td><input type="text" placeholder="Foreign key"></td>
+</tr>
+</table>
+</div>
+</template>
+<style>
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=url], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;}
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;}
+input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+	}
+</style>
+<script>
+</script>
+
