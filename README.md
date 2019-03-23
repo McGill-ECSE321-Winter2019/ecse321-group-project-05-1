@@ -38,16 +38,16 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
-|Salman            |      hours|Persistence layer & Build system  |
-|Tushar            |      hours|Documentation |
-|Archit            |      hours|Unit Testing & Integration Testing        |
-|Kathy             |      hours|Documentation & Project Wiki        |
-|Mert              |      hours|Documentation & Software Quality Assurance Report         |
+|Salman            |   32 hours|Model redesign, Persistence, REST API, Database Testing  |
+|Tushar            |   16 hours|Documentation & Testing |
+|Archit            |   40 hours|New UML, Persistence, JUnit Testing, REST, Travis CI |
+|Kathy             |   17 hours|Documentation & Project Wiki  |
+|Mert              |   17 hours|Documentation & Software Quality Assurance Report         |
 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
 - Link to our Heroku: https://cryptic-coast-32220.herokuapp.com/
 - Link to our Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Project-Report-Deliverable-2
 - Link to our Test Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Software-Quality-Assurance-Report
-
+- Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added) is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
 
