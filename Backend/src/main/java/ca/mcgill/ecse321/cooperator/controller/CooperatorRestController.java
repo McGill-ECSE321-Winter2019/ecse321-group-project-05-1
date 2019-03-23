@@ -40,11 +40,9 @@ public class CooperatorRestController {
 	 */
 	@PostMapping(value = { "/students", "/students/" })
 	public StudentDto createStudent(@RequestParam("mcgillID") int mcgillID, 
-			@RequestParam("name") String name, @RequestParam("email") String email,
-			@RequestParam("progress") int progress, @RequestParam("isEnrolled") boolean isEnrolled,
-			@RequestParam("reportSubmitted") boolean reportSubmitted) throws IllegalArgumentException {
+			@RequestParam("name") String name, @RequestParam("email") String email) throws IllegalArgumentException {
 		// @formatter:on
-		Student student = service.createStudent(mcgillID, name, email, progress, isEnrolled, reportSubmitted);
+		Student student = service.createStudent(mcgillID, name, email);
 		return convertToDto(student);
 	}
 	
@@ -57,12 +55,9 @@ public class CooperatorRestController {
 			@RequestParam("startDate") String startDate, @RequestParam("endDate") String endDate,
 			@RequestParam("semester") String semester, @RequestParam("companyName") String companyName,
 			@RequestParam("workPermit") boolean workPermit, @RequestParam("employerContract") String employerContract,
-			@RequestParam("workLoad") int workLoad, @RequestParam("initialReport") String initialReport,
-			@RequestParam("workExperience") String workExperience, @RequestParam("evaluationReport") String evaluationReport,
-			@RequestParam("technologies") String technologies, @RequestParam("coopCourses") String coopCourses,
-			@RequestParam("technicalReport") String technicalReport, @RequestParam("fkStudentMcgillID") int fkStudentMcgillID) throws IllegalArgumentException {
+			@RequestParam("instructorID") int instructorID, @RequestParam("fkStudentMcgillID") int fkStudentMcgillID) throws IllegalArgumentException {
 			
-			Coop coop = service.createCoop(coopID, location, startDate, endDate, semester, companyName, workPermit, employerContract, workLoad, initialReport, workExperience, evaluationReport, technologies, coopCourses, technicalReport, fkStudentMcgillID);
+			Coop coop = service.createCoop(coopID, location, startDate, endDate, semester, companyName, workPermit, employerContract, instructorID, fkStudentMcgillID);
 			return convertToDto(coop);
 	}
 	
@@ -99,33 +94,31 @@ public class CooperatorRestController {
 	/*
 	 * http://localhost:8080/students/123/98765/initialReport?initialReport=googleLink1
 	 */
-	@PutMapping(value = { "/students/{mcgillID}/{coopID}/initialReport", "/students/{mcgillID}/{coopID}/initialReport/" })
-	public void submitInitialReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("initialReport") String initialReport) {
-		Coop coop = service.getCoop(coopID);
-		coop.setInitialReport(initialReport);
-		coop.getStudent().setProgress(50);
+	@PutMapping(value = { "/students1/{mcgillID}/{coopID}", "/students/{mcgillID}/{coopID}/" })
+	public CoopDto submitInitialReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("initialReport") String initialReport, @RequestParam("workLoad") int workLoad) {
+		Coop coop = service.updateInitialReportForm(coopID, initialReport, workLoad);
+		return convertToDto(coop);
+		
 	}
 	
 	//PUT: submit technical report during the coop
 	/*
 	 * http://localhost:8080/students/123/98765?technicalReport=googleLink2
 	 */
-	@PutMapping(value = { "/students/{mcgillID}/{coopID}/technicalReport", "/students/{mcgillID}/{coopID}/technicalReport/" })
-	public void submitTechnicalReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("initialReport") String technicalReport) {
-		Coop coop = service.getCoop(coopID);
-		coop.setTechnicalReport(technicalReport);
-		coop.getStudent().setProgress(75);
+	@PutMapping(value = { "/students2/{mcgillID}/{coopID}", "/students/{mcgillID}/{coopID}/" })
+	public CoopDto submitTechnicalReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("technicalReport") String technicalReport) {
+	 	Coop coop = service.updateTechnicalReportForm(coopID, technicalReport);
+		return convertToDto(coop);
 	}
 	
 	//PUT: submit evaluation report at the end of coop
 	/*
 	 * http://localhost:8080/students/123/98765?evaluationReport=googleLink3
 	 */
-	@PutMapping(value = { "/students/{mcgillID}/{coopID}/evaluationReport", "/students/{mcgillID}/{coopID}/evaluationReport/" })
-	public void submitEvaluationReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("initialReport") String evaluationReport) {
-		Coop coop = service.getCoop(coopID);
-		coop.setEvaluationReport(evaluationReport);
-		coop.getStudent().setProgress(100);
+	@PutMapping(value = { "/students3/{mcgillID}/{coopID}", "/students/{mcgillID}/{coopID}/" })
+	public CoopDto submitEvaluationReport(@PathVariable("mcgillID") int mcgillID, @PathVariable("coopID") int coopID, @RequestParam("evaluationReport") String evaluationReport, @RequestParam("workExperience") String workExperience, @RequestParam("technologies") String technologies, @RequestParam("courses") String courses) {
+		Coop coop = service.updateEvaluationReportForm(coopID, evaluationReport, workExperience, technologies, courses);
+		return convertToDto(coop);
 	}
 	
 	//GET: check student progress
@@ -135,7 +128,7 @@ public class CooperatorRestController {
 	@GetMapping(value = {"/students/{mcgillID}", "/students/{mcgillID}/"})
 	public int getProgress(@PathVariable("mcgillID") int mcgillID) {
 		Student student = service.getStudent(mcgillID);
-		return student.getProgress();
+		return student.getCoop().getProgress();
 	}
 	
 	// =================================================================================================================
@@ -254,7 +247,7 @@ public class CooperatorRestController {
 		if (s == null) {
 			throw new IllegalArgumentException("There is no such student!");
 		}
-		StudentDto studentDto = new StudentDto(s.getMcgillID(), s.getName(), s.getEmail(), s.isReportSubmitted(), s.isIsEnrolled(), s.getProgress());
+		StudentDto studentDto = new StudentDto(s.getMcgillID(), s.getName(), s.getEmail(), s.isReportSubmitted(), s.isIsEnrolled());
 		//studentDto.setEvents(createEventDtosForPerson(p));
 		return studentDto;
 	}
@@ -263,7 +256,7 @@ public class CooperatorRestController {
 		if (c == null) {
 			throw new IllegalArgumentException("There is no such Coop!");
 		}
-		CoopDto coopDto = new CoopDto(c.getCoopID(), c.getLocation(), c.getStartDate(), c.getEndDate(), c.getSemester(), c.getCompanyName(), c.isWorkPermit(), c.getEmployerContract(), c.getWorkLoad(), c.getInitialReport(), c.getWorkExperience(), c.getEvaluationReport(), c.getTechnologies(), c.getCoopCourses(), c.getTechnicalReport(), c.getStudent().getMcgillID());
+		CoopDto coopDto = new CoopDto(c.getCoopID(), c.getLocation(), c.getStartDate(), c.getEndDate(), c.getSemester(), c.getCompanyName(), c.isWorkPermit(), c.getEmployerContract(), c.getWorkLoad(), c.getInitialReport(), c.getWorkExperience(), c.getEvaluationReport(), c.getTechnologies(), c.getCoopCourses(), c.getTechnicalReport(), c.getStudent().getMcgillID(), c.getProgress(), c.getInstructorID());
 		return coopDto;
 	}
 }

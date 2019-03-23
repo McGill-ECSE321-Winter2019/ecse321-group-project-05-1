@@ -66,14 +66,4 @@ public void setIsEnrolled(boolean value) {
 public boolean isIsEnrolled() {
 	    return this.isEnrolled;
 	}
-	
-	
-private int progress;
-
-public void setProgress(int value) {
-	    this.progress = value;
-	}
-public int getProgress() {
-	    return this.progress;
-	}
 }

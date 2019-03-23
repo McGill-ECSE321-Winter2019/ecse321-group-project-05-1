@@ -6,18 +6,16 @@ public class StudentDto {
 	private String email;
 	private boolean reportSubmitted;
 	private boolean isEnrolled;
-	private int progress;
 	
 	public StudentDto() {
 	}
 	
-	public StudentDto(int mcgillID, String name, String email, boolean reportSubmitted, boolean isEnrolled, int progress) {
+	public StudentDto(int mcgillID, String name, String email, boolean reportSubmitted, boolean isEnrolled) {
 		this.mcgillID = mcgillID;
 		this.name = name;
 		this.email = email;
 		this.reportSubmitted = reportSubmitted;
 		this.isEnrolled = isEnrolled;
-		this.progress = progress;
 	}
 	
 	public int getMcgillID() {
@@ -40,7 +38,4 @@ public class StudentDto {
 		return isEnrolled;
 	}
 	
-	public int getProgress() {
-		return progress;
-	}
 }

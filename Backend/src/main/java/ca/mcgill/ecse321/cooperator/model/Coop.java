@@ -128,6 +128,22 @@ public class Coop{
 	    return this.technicalReport;
 	}
 	
+	private int progress;
+	public void setProgress(int value) {
+		    this.progress = value;
+		}
+	public int getProgress() {
+		    return this.progress;
+		}
+	
+	private int instructorID;
+	public void setInstructorID(int value) {
+		    this.instructorID = value;
+		}
+	public int getInstructorID() {
+		    return this.instructorID;
+		}
+	
 	   private Student student;
 	   
 	   @OneToOne(optional=false)

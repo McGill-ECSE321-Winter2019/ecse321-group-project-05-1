@@ -26,7 +26,7 @@ public class CooperatorService {
 	//---STUDENT CLASS---//
 	//CREATE
 	@Transactional
-	public Student createStudent(int mcgillID, String name, String email, int progress, boolean isEnrolled, boolean reportSubmitted){
+	public Student createStudent(int mcgillID, String name, String email){
 		if (name == null || name.trim().length() == 0) {
 			throw new IllegalArgumentException("Student name cannot be empty!");
 		} 
@@ -41,9 +41,8 @@ public class CooperatorService {
 		student.setName(name);
 		student.setMcgillID(mcgillID);
 		student.setEmail(email);
-		student.setProgress(progress);
-		student.setIsEnrolled(isEnrolled);
-		student.setReportSubmitted(reportSubmitted);
+		student.setIsEnrolled(true);
+		student.setReportSubmitted(false);
 		studentrepository.save(student); //saves student into the database
 		
 		return student;
@@ -57,7 +56,7 @@ public class CooperatorService {
 		}
 		return studentrepository.findBymcgillID(mcgillID); //returns student with the primary key id
 	}
-	//RETRIEVE ALL STUDENTS
+	//READ ALL STUDENTS
 	@Transactional
 	public List<Student> getAllStudents() {
 		return toList(studentrepository.findAll());
@@ -74,7 +73,7 @@ public class CooperatorService {
 	//---COOP CLASS---//
 	//CREATE
 	@Transactional
-	public Coop createCoop(int coopID, String location, String startDate, String endDate, String semester, String companyName, boolean workPermit, String employerContract, int workLoad, String initialReport, String workExperience, String evaluationReport, String technologies, String coopCourses, String technicalReport, int fkStudentMcgillID) {	
+	public Coop createCoop(int coopID, String location, String startDate, String endDate, String semester, String companyName, boolean workPermit, String employerContract, int instructorID, int fkStudentMcgillID) {	
 		if (coopID == 0) {
 			throw new IllegalArgumentException("ID cannot be empty!");
 		}
@@ -106,13 +105,16 @@ public class CooperatorService {
 		coop.setCompanyName(companyName);
 		coop.setWorkPermit(workPermit);
 		coop.setEmployerContract(employerContract);
-		coop.setWorkLoad(workLoad);
-		coop.setInitialReport(initialReport);
-		coop.setWorkExperience(workExperience);
-		coop.setEvaluationReport(evaluationReport);
-		coop.setTechnologies(technologies);
-		coop.setCoopCourses(coopCourses);
-		coop.setTechnicalReport(technicalReport);
+		coop.setInstructorID(instructorID);
+		
+		coop.setWorkLoad(0);
+		coop.setInitialReport(null);
+		coop.setWorkExperience(null);
+		coop.setEvaluationReport(null);
+		coop.setTechnologies(null);
+		coop.setCoopCourses(null);
+		coop.setTechnicalReport(null);
+		coop.setProgress(25);
 		coop.setStudent(studentrepository.findBymcgillID(fkStudentMcgillID));
 		cooprepository.save(coop); //saves student into the database
 		
@@ -128,6 +130,37 @@ public class CooperatorService {
 	@Transactional
 	public List<Coop> getAllCoops() {
 		return toList(cooprepository.findAll());
+	}
+	
+	//UPDATE
+	@Transactional
+	public Coop updateInitialReportForm(int coopID, String initialReport, int workLoad) {
+		cooprepository.findBycoopID(coopID).setInitialReport(initialReport);
+		cooprepository.findBycoopID(coopID).setWorkLoad(workLoad);
+		cooprepository.findBycoopID(coopID).setProgress(50);
+		cooprepository.save(cooprepository.findBycoopID(coopID));
+		return cooprepository.findBycoopID(coopID);
+	}
+	
+	//UPDATE
+	@Transactional
+	public Coop updateTechnicalReportForm(int coopID, String technicalReport) {
+		cooprepository.findBycoopID(coopID).setTechnicalReport(technicalReport);
+		cooprepository.findBycoopID(coopID).setProgress(75);
+		cooprepository.save(cooprepository.findBycoopID(coopID));
+		return cooprepository.findBycoopID(coopID);
+	}
+	
+	//UPDATE
+	@Transactional
+	public Coop updateEvaluationReportForm(int coopID, String evaluationReport, String workExperience, String technologies, String courses) {
+		cooprepository.findBycoopID(coopID).setEvaluationReport(evaluationReport);
+		cooprepository.findBycoopID(coopID).setWorkExperience(workExperience);
+		cooprepository.findBycoopID(coopID).setTechnologies(technologies);
+		cooprepository.findBycoopID(coopID).setCoopCourses(courses);
+		cooprepository.findBycoopID(coopID).setProgress(100);
+		cooprepository.save(cooprepository.findBycoopID(coopID));
+		return cooprepository.findBycoopID(coopID);
 	}
 	
 	//DELETE

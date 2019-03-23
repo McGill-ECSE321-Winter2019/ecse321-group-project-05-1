@@ -19,11 +19,13 @@ public class CoopDto {
 	private String coopCourses;
 	private String technicalReport;
 	private int fkStudentMcgillID;
-	 
+	private int progress;
+	private int instructorID;
+	
 	public CoopDto() {
 	}
 	
-	public CoopDto(int coopID, String location, String startDate, String endDate, String semester, String companyName, boolean workPermit, String employerContract, int workLoad, String initialReport, String workExperience, String evaluationReport, String technologies, String coopCourses, String technicalReport, int fkStudentMcgillID) {
+	public CoopDto(int coopID, String location, String startDate, String endDate, String semester, String companyName, boolean workPermit, String employerContract, int workLoad, String initialReport, String workExperience, String evaluationReport, String technologies, String coopCourses, String technicalReport, int fkStudentMcgillID, int progress, int instructorID) {
 		this.coopID = coopID;
 		this.location = location;
 		this.startDate = startDate;
@@ -40,6 +42,8 @@ public class CoopDto {
 		this.coopCourses = coopCourses;
 		this.technicalReport = technicalReport;
 		this.fkStudentMcgillID = fkStudentMcgillID;
+		this.progress = progress;
+		this.instructorID = instructorID;
 	}
 	
 	public int getCoopId() {
@@ -105,4 +109,14 @@ public class CoopDto {
 	public int getfkStudentMcgillID() {
 		return fkStudentMcgillID;
 	}
+	
+	public int getProgress() {
+		return progress;
+	}
+	
+	public int getInstructorID() {
+		return instructorID;
+	}
+	
+	
 }
