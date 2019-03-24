@@ -60,7 +60,7 @@ public class CooperatorRestController {
 			Coop coop = service.createCoop(coopID, location, startDate, endDate, semester, companyName, workPermit, employerContract, instructorID, fkStudentMcgillID);
 			return convertToDto(coop);
 	}
-	
+	 
 	//GET: retrieve a particular student's general info
 	/*
 	 * http://localhost:8080/studentsAll/123
