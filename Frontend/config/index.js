@@ -4,7 +4,7 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    host: 'frontend-123.herokuapp.com', 
+    host: 'sleepy-anchorage-13805.herokuapp.com', 
     port: 443,
     backendHost: 'cryptic-coast-32220.herokuapp.com',
     backendPort: 443,
