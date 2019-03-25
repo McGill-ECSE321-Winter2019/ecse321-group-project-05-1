@@ -51,8 +51,8 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
 |Salman            |    hours|Integation of Frontend with Backend  |
 |Tushar            |    hours|Frontend Implementation |
 |Archit            |    hours|Integration of Frontend with Backend  |
-|Kathy             |    hours|Documentation & Project Wiki  |
-|Mert              |    hours|Architecture Model         |
+|Kathy             |   17 hours|Documentation & Project Wiki  |
+|Mert              |   17 hours|Architecture Model & Documentation         |
 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
