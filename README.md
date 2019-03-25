@@ -50,9 +50,9 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
-|Salman            |    hours|Integation of Frontend with Backend  |
-|Tushar            |    hours|Frontend Implementation |
-|Archit            |    hours|Integration of Frontend with Backend  |
+|Salman            |   20 hours|Integation of Frontend with Backend  |
+|Tushar            |   38 hours|Frontend Implementation |
+|Archit            |   25 hours|Integration of Frontend with Backend  |
 |Kathy             |   17 hours|Documentation & Project Wiki  |
 |Mert              |   17 hours|Architecture Model & Documentation         |
 
