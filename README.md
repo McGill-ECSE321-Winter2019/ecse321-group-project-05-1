@@ -70,4 +70,5 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
  perfectly fine on local host so please use **npm run dev** to initialize it. 
  - Since our frontend heroku app was not deployed, we were also unable to connect it to travis but the backend continous integration with travis works fine.
  - Please create a new student and coop before accessing initial/technical/evaluation report methods. 
+ - Frontend Screenshots can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Frontend-Screenshots
  
