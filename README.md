@@ -5,6 +5,8 @@
 * [Technical Issues](#technical-issues)
 * [Teamwork Report](#teamwork-report)
 * [File Location](#file-location)
+* [Front End Explanation](#front-end-explanation)
+
 
 
 ## About
@@ -62,3 +64,9 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
 - Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added) is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
 - Link to our Architecture Model: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Architecture-Model
 
+## Front End Explanation
+ - As we were unable to deploy the heroku frontend app successfully, we had to run our application on the localhost. Our application runs
+ perfectly fine on local host so please use **npm run dev** to initialize it. 
+ - Since our frontend heroku app was not deployed, we were also unable to connect it to travis but the backend continous intregation with    travis works fine.
+ - Please create a new student and coop before accessing initial/technical/evaluation report methods. 
+ 
