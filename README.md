@@ -8,20 +8,20 @@
 
 
 ## About
-The Co-operator is a co-op management tool intregrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the second deliverable includes: 
+The Co-operator is a co-op management tool intregrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the third deliverable includes: 
 
-1. REST API implementation
-2. Software Quality Assurance Report
-3. Unit Testing of Backend 
-4. Integration Testing 
-5. Build System
+1. Architecture Modelling
+2. Implementation of Web Frontend
+3. Integration of Web Frontend with Backend Services
+4. Build System
+5. Documentation
 
-Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, ZenHub, Heroku, Postman, Local PostgreSQL server, Travis CI
+Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Travis CI, Heroku PostgreSQL, Vue.js, HTML, CSS, Javascript
 
 ## Technical Issues
-- Installed Postman to test our REST methods locally
-- We created a postgreSQL database locally to check if our post requests worked
-- We had to reconfigure our database connection 
+- Trouble persisting data into the Heroku database
+- Issues styling the UI 
+- We were able to integrate with the POST methods but not the GET methods
 
 ## Teamwork Report
 ### Deliverable 1
@@ -44,10 +44,21 @@ Tools that were used for this Deliverable include: Eclipse, SpringBoot, Gradle, 
 |Kathy             |   17 hours|Documentation & Project Wiki  |
 |Mert              |   17 hours|Documentation & Software Quality Assurance Report         |
 
+### Deliverable 3
+
+|Team member's name|Total hours|Responsibility          |
+|------------------|-----------|----------------------- |
+|Salman            |    hours|Integation of Frontend with Backend  |
+|Tushar            |    hours|Frontend Implementation |
+|Archit            |    hours|Integration of Frontend with Backend  |
+|Kathy             |   17 hours|Documentation & Project Wiki  |
+|Mert              |   17 hours|Architecture Model & Documentation         |
+
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
-- Link to our Heroku: https://cryptic-coast-32220.herokuapp.com/
-- Link to our Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Project-Report-Deliverable-2
+- Link to our Heroku: 
+- Link to our deliverable 3 Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Project-Report-Deliverable-3
 - Link to our Test Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Software-Quality-Assurance-Report
 - Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added) is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
+- Link to our Architecture Model: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Architecture-Model
 

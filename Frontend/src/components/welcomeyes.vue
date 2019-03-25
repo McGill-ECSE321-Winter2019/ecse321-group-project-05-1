@@ -5,7 +5,7 @@
 <tr>
 <td>
 <input type= "number" placeholder="Student ID">
-<button >Go to my Dashboard</button>
+<button>Go to my Dashboard</button>
 </td>
 </tr>
 </table>

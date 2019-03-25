@@ -2,6 +2,10 @@
 <div id="newcoop">
 <table align="center">
 <tr>
+<td>StudentID</td>
+<td><input type="number" v-model="idstudent" placeholder="Name"></td>
+</tr
+<tr>
 <td>CoopID</td>
 <td><input type="number" v-model="coopid" placeholder="ID number"></td>
 </tr>
