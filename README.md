@@ -56,7 +56,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
-- Link to our Heroku: https://cryptic-coast-32220.herokuapp.com/
+- Link to our Heroku: 
 - Link to our deliverable 3 Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Project-Report-Deliverable-3
 - Link to our Test Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Software-Quality-Assurance-Report
 - Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added) is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
