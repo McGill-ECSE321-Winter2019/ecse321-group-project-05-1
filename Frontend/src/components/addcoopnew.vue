@@ -2,6 +2,10 @@
 <div id="newcoop">
 <table align="center">
 <tr>
+<td>Student Name</td>
+<td><input type="text" v-model="name" placeholder="Name"></td>
+</tr>
+<tr>
 <td>CoopID</td>
 <td><input type="number" v-model="coopid" placeholder="ID number"></td>
 </tr>
@@ -42,7 +46,8 @@
 <td><input type="number" v-model="fkstudentmcgillid" placeholder="Foreign key"></td>
 </tr>
 <tr>
-<td><button @click="createcoop(coopid, location, startdate, enddate, semester, companyname, workpermit, employercontract, instructorid, fkstudentmcgillid)"><router-link to="dashboard">Add Coop</router-link></button></td>
+<td></td>
+<td><button @click="createcoop(coopid, location, startdate, enddate, semester, companyname, workpermit, employercontract, instructorid, fkstudentmcgillid), $router.push({path:'/dashboard/'+fkstudentmcgillid+'/'+name})">Add Coop</button></td>
 </tr>
 </table>
 </div>
@@ -88,6 +93,7 @@ input[type=date], select {
   box-sizing: border-box;
 	}
 button {
+  align: center;
   position: relative;
   width: 250px; height: 60px;
   background: reddish;
@@ -118,7 +124,7 @@ button:hover::after {
 }
 
 </style>
+<script src="./addcoop.js">
 
-<script>
 </script>
 

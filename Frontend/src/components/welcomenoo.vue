@@ -7,28 +7,24 @@ Welcome to the cooperator!
 <tr>
 <td>Full Name</td>
 <td>
-<input type="text" v-model="newFirstname" placeholder="Full Name">
+<input type="text" v-model="student" placeholder="Full Name">
 </td>
-  <tr v-for="fullname in firstnames" >
-      <td>{{ fullname.firstname }}</td>
-  </tr>
-
 <tr>
 <td>Email ID</td>
 <td>
-<input type="text" placeholder="McGill Email">
+<input type="text"  v-model="email" placeholder="McGill Email">
 </td>
 </tr>
 <tr>
 <td>McGill ID</td>
 <td>
-<input type="number" placeholder="McGill ID Number">
+<input type="number" v-model="id" placeholder="McGill ID Number">
 </td>
 </tr> 
 <tr>
 <td></td>
 <td>
-<button @click="createFirstname(newFirstname)"><router-link to="/addcoop">Add me!</router-link></button>
+<button @click="createstudents(student, email,id)">Add me!</button>
 </td>
 </tr>
 </table>

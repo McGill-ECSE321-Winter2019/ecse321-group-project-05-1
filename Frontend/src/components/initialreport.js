@@ -8,33 +8,39 @@ var AXIOS = axios.create({
   headers: { 'Access-Control-Allow-Origin': frontendUrl }
 })
 
-function studentDto (student, email,id) {
-  this.student = student
-  this.email= email
-  this.id= id
+function initialDto(idstudent, coopid, irlink, hours, ) {
+  this.idstudent = idstudent
+  this.coopid= coopid
+  this.irlink= irlink
+  this.hours= hours
 }
 export default {
-  name: 'welcomenoo',
+  name: 'initialreportnew',
   data () {
     return {
-      students: [],
-      newStudents: '',
+      ireport: [],
+      newIreport: '',
+      id: 0,
     }
+  },
+  created(){
+    this.id= this.$route.params.id;
   },
 //created: function(){
  // const p1=new studentDto('TUSHAR','tushar.agarwal@mail.mcgill.ca', '2234')
  // this.students=[p1]
 //},
 methods: {
-  createstudents: function (Student, Email,Id) {
-    this.$router.push({name:'addcoopnew'})
-    AXIOS.post(`/students`+'?mcgillID=' + Id +'&name=' + Student + '&email=' + Email)
+  createinitialreport: function (idstudent,coopid,irlink,hours) {
+    AXIOS.put(`/students1/`+ idstudent + '/' +coopid + '?initialReport=' + irlink + '&workLoad='+ hours)
     .then(response => {
-      console.log(response.data.name)
+        console.log(response.data.initialReport)
       // JSON responses are automatically parsed.
-      this.students.push(response.data)})
+      this.ireport.push(response.data)
+    })
 
     
   }
 }
+ 
 }

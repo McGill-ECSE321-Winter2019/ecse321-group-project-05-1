@@ -2,31 +2,26 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Welcome from '@/components/Welcome'
-import welcomeyes from '@/components/welcomeyes'
 import welcomenoo from '@/components/welcomenoo'
-import addcoop from '@/components/addcoop'
 import dashboard from '@/components/dashboard'
-import initialreport from '@/components/initialreport'
 import technicalreport from '@/components/technicalreport'
-import evaluationreport from '@/components/evaluationreport'
+import evaluationreportnew from '@/components/evaluationreportnew'
+import addcoopnew from '@/components/addcoopnew'
+import initialreportnew from '@/components/initialreportnew'
+import returningstudent from '@/components/returningstudent'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-{
-      path: '/welcome',
       name: 'Welcome',
       component: Welcome
     },
 {
-      path: '/welcomeyes',
-      name: 'welcomeyes',
-      component: welcomeyes
+      path: '/returningstudent',
+      name: 'returningstudent',
+      component: returningstudent
     },
 {
      path: '/welcomenoo',
@@ -34,19 +29,23 @@ export default new Router({
    component: welcomenoo
   },
 {
-     path: '/addcoop',
-     name: 'addcoop',
-     component: addcoop
+     path: '/addcoopnew',
+     name: 'addcoopnew',
+     component: addcoopnew
 },
 {
-     path: '/dashboard',
+     path: '/dashboard/:id/:name',
      name: 'dashboard',
      component: dashboard
 },
+{   path: '/dashboard',
+    name:'/dashboard',
+    component: dashboard
+},
 {
-    path: '/initialreport',
-    name: 'initialreport',
-    component: initialreport
+    path: '/initialreportnew',
+    name: 'initialreportnew',
+    component: initialreportnew
   },
   {
     path: '/technicalreport',
@@ -55,8 +54,8 @@ export default new Router({
   },
   {
     path: '/evaluationreport',
-    name: 'evaluationreport',
-    component: evaluationreport
+    name: 'evaluationreportnew',
+    component: evaluationreportnew
   }
   ]
 })

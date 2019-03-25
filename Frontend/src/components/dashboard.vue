@@ -1,25 +1,24 @@
-<template>
 
+<template>
 <div id="dashboard">
 <table id="head" align="left" style="width: 100%">
 <tr>
-<td>
-<h1 align=left id=dashboard1>Welcome Tushar</h1>
-</td>
-<td><h1 align=right id=dashboard1>Student ID: 260721680</h1></td></tr>
+<td><h1 id=dashboard1>Welcome {{name}}</h1></td>
+<h1 align=left class="dashboard1"></h1>
+<td><h1 align=right id=dashboard2>Student ID is {{id}}</h1></td></tr>
 </table>
 <ul>
   <li><h5><a class="active"><router-link to="/dashboard">Dashboard</router-link></a></h5></li>
-  <li><h5><a><router-link to="/initialreport">Initial Report</router-link></a></h5></li>
+  <li><h5><a><router-link to="/initialreportnew">Initial Report</router-link></a></h5></li>
   <li><h5><a><router-link to="/technicalreport">Technical Report</router-link></a></h5></li>
   <li><h5><a><router-link to="/evaluationreport">Evaluation From</router-link></a></h5></li>
 </ul>
 <table id=body align=left>
 <tr>
 <tr>
-<H3 id="progress">
-You're Co-op progress is 75%</h3>
-<progress max="100" value="75"> </progress>
+<h3 id="prog1">
+Your Co-op progress is 25%!</h3>
+<progress max="100" value="25"> </progress>
 <tr>
 </tr>
 </table>
@@ -27,14 +26,17 @@ You're Co-op progress is 75%</h3>
 </template>
 
 <style>
-
+#dashboard3{color:white}
 #head{background-color:#696969}
 #dashboard1{color:white}
+#dashboard1{padding-right:40%}
 #dashborard{padding-left:20px}
+#dashboard2{color:white}
+#dashboard2{padding-left:10%}
 h2{color:white}
 h2{padding-right:20px}
 
-#progress{
+#prog1{
 	margin-top:150px;
 }
 
@@ -79,6 +81,31 @@ border-color: white;
 margin-left:50%;
 }
 </style>
-
 <script>
+import router from '../router'
+export default {
+  name: 'dashboard',
+  date(){
+    return{
+      id: 0,
+      name: '',
+      progress:0,
+    }
+  },
+  created(){
+    this.id= this.$route.params.id;
+    this.name=this.$route.params.name;
+    console.log(id)
+AXIOS.get(`/students/`+ id)
+    .then(response => {
+      //var prog = response.data
+return responde.data
+      // JSON responses are automatically parsed.
+      //console.log(prog)
+    })
+      this.progress = prog;
+  },
+
+}
 </script>
+

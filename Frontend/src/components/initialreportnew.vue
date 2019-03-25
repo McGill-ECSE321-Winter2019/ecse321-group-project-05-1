@@ -1,6 +1,6 @@
 <template>
 
-<div id="technicalreport">
+<div id="initialreport">
 <table id="head" align="left" >
 <tr>
 <td>
@@ -9,33 +9,34 @@
 <td><h1 align=right id=dashboard2></h1></td></tr>
 </table>
 <ul>
-  <li><h5><a ><router-link to="/dashboard">Dashboard</router-link></a></h5></li>
-  <li><h5><a><router-link to="/initialreportnew">Initial Report</router-link></a></h5></li>
-  <li><h5><a class="active"><router-link to="/technicalreport">Technical Report</router-link></a></h5></li>
+  <li><h5><a><router-link to="/dashboard">Dashboard</router-link></a></h5></li>
+  <li><h5><a a class="active"><router-link to="/initialreport">Initial Report</router-link></a></h5></li>
+  <li><h5><router-link to="/technicalreport">Technical Report</router-link></h5></li>
   <li><h5><a><router-link to="/evaluationreport">Evaluation From</router-link></a></h5></li>
 </ul>
-
 <table id=body>
 <tr >
 <td align=center><h4 id="tasks">Name</h4><input type="text" v-model="name" placeholder="Name"></td>
 </tr>
-<tr>
-<td align=center><h4 id="tasks">McGillID</h4><input type="url" size="50" placeholder="McGill ID " v-model="idstudent"></td>
-</tr>
-<tr>
-<td align=center><h4 id="tasks">CoopID</h4><input type="url" size="50" placeholder="McGill ID " v-model="coopid"></td>
+<tr >
+<td align=center><h4 id="tasks">McGillID</h4><input type="text" v-model="idstudent" placeholder="McGillID"></td>
 </tr>
 <tr >
-<td align=center><h4 id="tasks">Technical Report Link</h4><input type="url" v-model="technicalreport" size="50" placeholder="Paste Google Drive Link"></td>
-</tr>
-<tr >
-<td align=center><button  @click="$router.push({path:'/dashboard/'+idstudent+'/'+name}), createtechnicalreport(idstudent,coopid,technicalreport)">Submit</button></td>
+<td align=center><h4 id="tasks">CoopID</h4><input type="text" v-model="coopid" placeholder="CoopID"></td>
 
+</tr>
+<tr >
+<td align=center><h4 id="tasks">Initial Report</h4><input type="text"  v-model="irlink" placeholder="Place Initial Report link"></td>
+</tr>
+<tr >
+<td align=center><h4 id="tasks">WorkLoad</h4><input type="number" v-model="hours" placeholder="Number of Hours"></td>
+</tr>
+<tr >
+<td align=center><button  @click="$router.push({path:'/dashboard/'+idstudent+'/'+name}), createinitialreport(idstudent,coopid,irlink,hours)">Submit</button></td>
 </tr>
 </table>
 </div>
 </template>
-
 <style>
 #tasks{
 margin-top:50px;
@@ -93,9 +94,8 @@ border-color: white;
  border: black;
   }
 #body{
-  
   margin-top:30px;
-margin-left:50%;
+   margin-left:50%;
 }
 button {
   position: relative;
@@ -130,5 +130,20 @@ button:hover::after {
 
 </style>
 
-<script src="./techicalreport.js">
+<script src="./initialreport.js">
+/*import router from '../router'
+export default {
+  name: 'initialreportnew',
+  dat(){
+    return{
+      id: 0,
+    }
+  },
+  created(){
+    this.id= this.$route.params.id;
+  },
+
+}
+*/
+
 </script>

@@ -2,9 +2,8 @@
 <div id= "Welcome">
 <h1>Welcome to the Cooperator</h1>
 <h3>Are you a new student?</h3>
-<button type="Button"><router-link to="welcomenoo">Yes I am!</router-link></button>
-
-<button type="No"><router-link to="welcomeyes">No not really!</router-link></button>
+<button @click="$router.push({path:'/welcomenoo/'})" >Yes I am!</button>
+<button @click="$router.push({path:'/returningstudent/'})"> No not really!</button>
 </div>
 </template>
 <style>
@@ -13,7 +12,7 @@ div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 2px;
-  reddish : #E74C3C;
+  areddish : #E74C3C;
 redder : #C0392B;
 cloud : #ECF0F1;
 }

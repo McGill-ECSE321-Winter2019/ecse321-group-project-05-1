@@ -1,5 +1,4 @@
 <template>
-
 <div id="initialreport">
 <table id="head" align="left" >
 <tr>
@@ -10,11 +9,10 @@
 </table>
 <ul>
   <li><h5><a><router-link to="/dashboard">Dashboard</router-link></a></h5></li>
-  <li><h5><a class="active"><router-link to="/initialreport">Initial Report</router-link></a></h5></li>
-  <li><h5><a><router-link to="/technicalreport">Technical Report</router-link></a></h5></li>
+  <li><h5><a><router-link to="/initialreport">Initial Report</router-link></a></h5></li>
+  <li><h5><a class="active"><router-link to="/technicalreport">Technical Report</router-link></a></h5></li>
   <li><h5><a><router-link to="/evaluationreport">Evaluation From</router-link></a></h5></li>
 </ul>
-
 <table id=body>
 <tr >
 <td align=center><h4 id="tasks">Initial Report</h4><input type="text" placeholder="Place Initial Report link"></td>
@@ -22,10 +20,9 @@
 </tr>
 <tr >
 <td align=center><h4 id="tasks">WorkLoad</h4><input type="number" placeholder="Number of Hours"></td>
-
+</tr>
 <tr >
 <td align=center><button><router-link to="/dashboard">Submit</router-link></button></td>
-
 </tr>
 </table>
 </div>
@@ -125,4 +122,5 @@ button:hover::after {
 </style>
 
 <script>
+
 </script>

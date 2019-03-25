@@ -1,6 +1,6 @@
 <template>
 
-<div id="initialreport">
+<div id="evaluationreport">
 <table id="head" align="left" >
 <tr>
 <td>
@@ -10,26 +10,36 @@
 </table>
 <ul>
   <li><h5><a ><router-link to="/dashboard">Dashboard</router-link></a></h5></li>
-  <li><h5><a><router-link to="/initialreport">Initial Report</router-link></a></h5></li>
+  <li><h5><a><router-link to="/initialreportnew">Initial Report</router-link></a></h5></li>
   <li><h5><a><router-link to="/technicalreport">Technical Report</router-link></a></h5></li>
-  <li><h5><a class="active"><router-link to="/evaluationreport" class="active">Evaluation From</router-link></a></h5></li>
+  <li><h5><a class="active"><router-link to="/evaluationreport" class="active">Evaluation Form</router-link></a></h5></li>
 </ul>
 
 <table id=body>
   <tr >
-<td align=center><h4 id="tasks">Evaluation Report</h4><input type="text" placeholder="Paste Evaluation Report Link" id=forms></td>
+<tr >
+<td align=center><h4 id="tasks">Name</h4><input type="text" v-model="name" placeholder="Name"></td>
+</tr>
+<tr>
+<td align=center><h4 id="tasks">McGillID</h4><input type="text"  v-model="idstudent" placeholder="Paste Evaluation Report Link" id=forms></td>
 </tr>
 <tr >
-<td align=center><h4 id="tasks">Work Experience</h4><input type="text" size="25" id=forms  placeholder="Experience of Internship"></td>
+<td align=center><h4 id="tasks">CoopID</h4><input type="text"  v-model="coopid" placeholder="Paste Evaluation Report Link" id=forms></td>
+</tr>
+  <tr >
+<td align=center><h4 id="tasks">Evaluation Report</h4><input type="text"  v-model="evaluationreport" placeholder="Paste Evaluation Report Link" id=forms></td>
 </tr>
 <tr >
-<td align=center><h4 id="tasks">Technologies</h4><input type="text" id=forms placeholder="Used Technologies"></td>
+<td align=center><h4 id="tasks">Work Experience</h4><input type="text" size="25" id=forms  v-model="workexperience " placeholder="Experience of Internship"></td>
 </tr>
 <tr >
-<td align=center><h4 id="tasks">Courses</h4><input type="text" id=forms placeholder="Course used"></td>
+<td align=center><h4 id="tasks">Technologies</h4><input type="text" id=forms v-model="technologies" placeholder="Used Technologies"></td>
 </tr>
 <tr >
-<td align=center><button><router-link to="/dashboard">Submit</router-link></button></td>
+<td align=center><h4 id="tasks">Courses</h4><input type="text" id=forms  v-model="courses" placeholder="Course used"></td>
+</tr>
+<tr >
+<td align=center><button  @click="$router.push({path:'/dashboard/'+idstudent+'/'+name}), createevaluationreport(idstudent,coopid,evaluationreport,workexperience,technologies,courses)">Submit</button></td>
 
 </tr>
 </table>
@@ -130,5 +140,5 @@ button:hover::after {
 
 </style>
 
-<script>
+<script src="./evaluationreport.js">
 </script>

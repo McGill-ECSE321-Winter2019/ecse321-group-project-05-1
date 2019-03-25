@@ -1,6 +1,7 @@
 <template>
 
-<div id="technicalreport">
+
+<div id="evaluationreport">
 <table id="head" align="left" >
 <tr>
 <td>
@@ -11,34 +12,44 @@
 <ul>
   <li><h5><a ><router-link to="/dashboard">Dashboard</router-link></a></h5></li>
   <li><h5><a><router-link to="/initialreportnew">Initial Report</router-link></a></h5></li>
-  <li><h5><a class="active"><router-link to="/technicalreport">Technical Report</router-link></a></h5></li>
-  <li><h5><a><router-link to="/evaluationreport">Evaluation From</router-link></a></h5></li>
+  <li><h5><a><router-link to="/technicalreport">Technical Report</router-link></a></h5></li>
+  <li><h5><a class="active"><router-link to="/evaluationreport" class="active">Evaluation Form</router-link></a></h5></li>
 </ul>
 
 <table id=body>
+  <tr >
 <tr >
 <td align=center><h4 id="tasks">Name</h4><input type="text" v-model="name" placeholder="Name"></td>
 </tr>
 <tr>
-<td align=center><h4 id="tasks">McGillID</h4><input type="url" size="50" placeholder="McGill ID " v-model="idstudent"></td>
-</tr>
-<tr>
-<td align=center><h4 id="tasks">CoopID</h4><input type="url" size="50" placeholder="McGill ID " v-model="coopid"></td>
+<td align=center><h4 id="tasks">McGillID</h4><input type="text"  v-model="idstudent" placeholder="Paste Evaluation Report Link" id=forms></td>
 </tr>
 <tr >
-<td align=center><h4 id="tasks">Technical Report Link</h4><input type="url" v-model="technicalreport" size="50" placeholder="Paste Google Drive Link"></td>
+<td align=center><h4 id="tasks">CoopID</h4><input type="text"  v-model="coopid" placeholder="Paste Evaluation Report Link" id=forms></td>
+</tr>
+  <tr >
+<td align=center><h4 id="tasks">Evaluation Report</h4><input type="text"  v-model="evaluationreport" placeholder="Paste Evaluation Report Link" id=forms></td>
 </tr>
 <tr >
-<td align=center><button  @click="$router.push({path:'/dashboard/'+idstudent+'/'+name}), createtechnicalreport(idstudent,coopid,technicalreport)">Submit</button></td>
+<td align=center><h4 id="tasks">Work Experience</h4><input type="text" size="25" id=forms  v-model="workexperience " placeholder="Experience of Internship"></td>
+</tr>
+<tr >
+<td align=center><h4 id="tasks">Technologies</h4><input type="text" id=forms v-model="technologies" placeholder="Used Technologies"></td>
+</tr>
+<tr >
+<td align=center><h4 id="tasks">Courses</h4><input type="text" id=forms  v-model="courses" placeholder="Course used"></td>
+</tr>
+<tr >
+<td align=center><button  @click="$router.push({path:'/dashboard/'+idstudent+'/'+name}), createevaluationreport(idstudent,coopid,evaluationreport,workexperience,technologies,courses)">Submit</button></td>
 
 </tr>
 </table>
+
 </div>
 </template>
-
 <style>
 #tasks{
-margin-top:50px;
+margin-top:30px;
 }
 #head{background-color:#696969}
 #head{width:100%}
@@ -46,15 +57,6 @@ margin-top:50px;
 #dashboard2{color:white}
 h2{color:white}
 h2{padding-right:20px}
-
-input[type=text], select {
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
 
 ul {
@@ -67,6 +69,15 @@ ul {
   overflow: auto;
   border-color: white;
   margin-top:58px;
+}
+
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 li a {
@@ -126,9 +137,6 @@ button:hover::after {
   transform: translateY(-80%);
   transition: transform .3s;
 }
-
-
 </style>
-
-<script src="./techicalreport.js">
+<script src="./evaluationreport.js">
 </script>
