@@ -2,13 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Welcome from '@/components/Welcome'
-import welcomenoo from '@/components/welcomenoo'
 import dashboard from '@/components/dashboard'
-import technicalreport from '@/components/technicalreport'
-import evaluationreportnew from '@/components/evaluationreportnew'
 import addcoopnew from '@/components/addcoopnew'
-import initialreportnew from '@/components/initialreportnew'
 import returningstudent from '@/components/returningstudent'
+import welcomeyes from '@/components/welcomeyes'
+import welcomenoo from '@/components/welcomenoo'
 Vue.use(Router)
 
 export default new Router({
@@ -43,20 +41,10 @@ export default new Router({
     component: dashboard
 },
 {
-    path: '/initialreportnew',
-    name: 'initialreportnew',
-    component: initialreportnew
-  },
-  {
-    path: '/technicalreport',
-    name: 'technicalreport',
-    component: technicalreport
-  },
-  {
-    path: '/evaluationreport',
-    name: 'evaluationreportnew',
-    component: evaluationreportnew
-  }
+   path: '/welcomeyes',
+   name: 'welcomeyes',
+   component: welcomeyes
+ }
   ]
 })
 

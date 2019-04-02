@@ -10,31 +10,28 @@ var AXIOS = axios.create({
 
 function returningDto (idstudent) {
   this.idstudent= idstudent
+ 
 }
 export default {
   name: 'welcomeyes',
   data () {
     return {
-      id: [],
-      progress: ''
-     // progress: [],
-     // newStudents: '',
+      idstudent: [],
+      name: '',
     }
   },
-//created: function(){
- // const p1=new studentDto('TUSHAR','tushar.agarwal@mail.mcgill.ca', '2234')
- // this.students=[p1]
+  created:  async function(idstudent){
+      const response = await fetch("https://cryptic-coast-32220.herokuapp.com/studentsAll/"+idstudent)
+      .then(response => response.json());
+         const body = await response.name;
+          this.name = body;
+          name = this.name;
+          console.log(this.name)
+      
 //},
-methods: {
-  returningid: function (id) {
-    AXIOS.get(`/students/`+ id )
-    .then(data => {
-       this.progess = response.data
-        this.progress.push(data)
-    })
 
    // var progress=this.progress
 
 }
 }
-}
+

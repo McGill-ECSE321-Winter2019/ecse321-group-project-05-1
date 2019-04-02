@@ -8,17 +8,17 @@ var AXIOS = axios.create({
   headers: { 'Access-Control-Allow-Origin': frontendUrl }
 })
 
-function returningDto (idstudent) {
-  this.idstudent= idstudent
+function studentDto (student, email,id) {
+  this.student = student
+  this.email= email
+  this.id= id
 }
 export default {
-  name: 'welcomeyes',
+  name: 'welcomenoo',
   data () {
     return {
-      id: [],
-      progress: ''
-     // progress: [],
-     // newStudents: '',
+      students: [],
+      newStudents: '',
     }
   },
 //created: function(){
@@ -26,15 +26,15 @@ export default {
  // this.students=[p1]
 //},
 methods: {
-  returningid: function (id) {
-    AXIOS.get(`/students/`+ id )
-    .then(data => {
-       this.progess = response.data
-        this.progress.push(data)
-    })
+  createstudents: function (Student, Email,Id) {
+    this.$router.push({name:'addcoopnew'})
+    AXIOS.post(`/students`+'?mcgillID=' + Id +'&name=' + Student + '&email=' + Email)
+    .then(response => {
+      console.log(response.data.name)
+      // JSON responses are automatically parsed.
+      this.students.push(response.data)})
 
-   // var progress=this.progress
-
-}
+    
+  }
 }
 }
