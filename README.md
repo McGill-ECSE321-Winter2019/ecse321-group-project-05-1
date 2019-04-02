@@ -5,6 +5,8 @@
 * [Technical Issues](#technical-issues)
 * [Teamwork Report](#teamwork-report)
 * [File Location](#file-location)
+* [Front End Explanation](#front-end-explanation)
+
 
 
 ## About
@@ -48,17 +50,24 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
-|Salman            |    hours|Integation of Frontend with Backend  |
-|Tushar            |    hours|Frontend Implementation |
-|Archit            |    hours|Integration of Frontend with Backend  |
+|Salman            |   20 hours|Integation of Frontend with Backend  |
+|Tushar            |   38 hours|Frontend Implementation |
+|Archit            |   25 hours|Integration of Frontend with Backend  |
 |Kathy             |   17 hours|Documentation & Project Wiki  |
 |Mert              |   17 hours|Architecture Model & Documentation         |
 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
-- Link to our Heroku: 
+- Link to our BackEnd Heroku: https://cryptic-coast-32220.herokuapp.com
+- Link to our FrontEnd Heroku: https://frontend-take2-murmur.herokuapp.com/#/  
 - Link to our deliverable 3 Project Report:https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Project-Report-Deliverable-3
 - Link to our Test Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Software-Quality-Assurance-Report
 - Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added) is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
 - Link to our Architecture Model: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Architecture-Model
 
+## Front End Explanation
+ - FrontEnd Heroku is deployed correctly now. Please visit https://frontend-take2-murmur.herokuapp.com/#/. We also ensured that if you create any new student (or do anything on the frontend), it gets stored in the database. For ex, create a new student. Go to Postman or Rest Client and create a GET request with http://cryptic-coast-32220.herokuapp.com/students . You will see that the student you have created shows up.
+ - Travis works perfectly fine with the BackEnd. "Elias Al Homsi", the T.A said that Travis cannot be integrated with the FrontEnd. 
+ - Please create a new student and coop before accessing initial/technical/evaluation report methods. 
+ - Frontend Screenshots can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Frontend-Screenshots
+ 
