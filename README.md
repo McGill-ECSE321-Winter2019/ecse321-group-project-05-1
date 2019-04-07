@@ -70,10 +70,11 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
  - Travis works perfectly fine with the BackEnd. "Elias Al Homsi", the T.A said that Travis cannot be integrated with the FrontEnd. 
  - Please create a new student and coop before accessing initial/technical/evaluation report methods. 
  - Frontend Screenshots can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Frontend-Screenshots
- # New in Front End Version 2!
- -Authentication check is now added for returning students, the system will not accept invalid McGill ID.
+ ### New in Front End Version 2!
+ -Secure login for authorization added for returning students.
  -New Page added to menu for showing previously submitted document links and instructor ID. 
  -As a new student, you only need to put your McGill ID once.
  -As a new student, you don’t need to remember your COOPID through the dashboard.
  -As a returning student, you need to only enter COOPID once,and the system will remember the ID till you logout.
  -Fixed a bug where "Welcome Student" was not displayed when the frontend was deployed to heroku!
+ -Enhanced UI, by adding calender and options on the "addcoop" page. Previously they were all text fields.
