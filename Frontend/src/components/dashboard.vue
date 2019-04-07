@@ -95,6 +95,7 @@ export default {
   created(){
     this.id= this.$route.params.id;
     this.name=this.$route.params.name;
+    //this will load the name into the ID 
     console.log(id)
 AXIOS.get(`/students/`+ id)
     .then(response => {
