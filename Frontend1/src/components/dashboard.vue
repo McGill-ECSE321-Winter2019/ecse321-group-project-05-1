@@ -375,6 +375,7 @@ createtechnicalreport: function (idstudent,coopid,technicalreport) {
         console.log(response.data.technicalReport)
       // JSON responses are automatically parsed.
       this.treport.push(response.data)
+      //This pushes data to treport
     })
   },
   createevaluationreport: function (idstudent, coopid, evaluationreport, workexperience, technologies, courses) {
