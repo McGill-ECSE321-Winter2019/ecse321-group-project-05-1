@@ -10,20 +10,14 @@
 
 
 ## About
-The Co-operator is a co-op management tool intregrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the third deliverable includes: 
+The Co-operator is a co-op management tool intregrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the fourth deliverable includes: 
 
-1. Architecture Modelling
-2. Implementation of Web Frontend
-3. Integration of Web Frontend with Backend Services
-4. Build System
-5. Documentation
+1. User Documentation
+2. Integrated System 
+3. Build System 
+4. Documentation
 
-Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Travis CI, Heroku PostgreSQL, Vue.js, HTML, CSS, Javascript
-
-## Technical Issues
-- Trouble persisting data into the Heroku database
-- Issues styling the UI 
-- We were able to integrate with the POST methods but not the GET methods
+Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vue.js, HTML, CSS, Javascript
 
 ## Teamwork Report
 ### Deliverable 1
@@ -55,6 +49,16 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
 |Archit            |   25 hours|Integration of Frontend with Backend  |
 |Kathy             |   17 hours|Documentation & Project Wiki  |
 |Mert              |   17 hours|Architecture Model & Documentation         |
+
+### Deliverable 4
+
+|Team member's name|Total hours|Responsibility          |
+|------------------|-----------|----------------------- |
+|Salman            |    hours|        |
+|Tushar            |    hours|Frontend |
+|Archit            |    hours|        |
+|Kathy             |    hours|Documentation & Project Wiki  |
+|Mert              |    hours|Documentation        |
 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
