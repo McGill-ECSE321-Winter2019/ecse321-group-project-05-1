@@ -176,7 +176,7 @@ bprogress{
 height:200%;}
 #head{background-color:black}
 #head{width:100%}
-#dashboard1{color:white; margin-left: 50%}
+#dashboard1{color:white; margin-left: 56%}
 #dashboard2{color:white}
 h2{color:white}
 h2{padding-right:20px}
