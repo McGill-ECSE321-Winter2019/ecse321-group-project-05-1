@@ -67,9 +67,8 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
 
 ## Front End Explanation
  - FrontEnd Heroku is deployed correctly now. Please visit https://frontend-take2-murmur.herokuapp.com/#/. We also ensured that if you create any new student (or do anything on the frontend), it gets stored in the database. For ex, create a new student. Go to Postman or Rest Client and create a GET request with http://cryptic-coast-32220.herokuapp.com/students . You will see that the student you have created shows up.
- - Travis works perfectly fine with the BackEnd. "Elias Al Homsi", the T.A said that Travis cannot be integrated with the FrontEnd. 
  - Please create a new student and coop before accessing initial/technical/evaluation report methods. 
- - Frontend Screenshots can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Frontend-Screenshots
+ - Version one screenshots can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Frontend-Screenshots
  ## New in Front End Version 2!
  - Secure login for authorization added for returning students.
  - New Page added to menu for showing previously submitted document links and instructor ID. 
@@ -78,3 +77,4 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Postman, Trav
  - As a returning student, you need to only enter COOPID once,and the system will remember the ID till you logout.
  - Fixed a bug where "Welcome Student" was not displayed when the frontend was deployed to heroku!
  - Enhanced UI, by adding calender and options on the "addcoop" page. Previously they were all text fields.
+ - New Screenshots and Main User Documentation can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/User-Documentation
