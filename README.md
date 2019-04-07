@@ -15,7 +15,7 @@ The Co-operator is a co-op management tool intregrating features from both myCou
 1. User Documentation
 2. Integrated System 
 3. Build System 
-4. Documentation
+4. Project Report
 
 Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vue.js, HTML, CSS, Javascript
 
