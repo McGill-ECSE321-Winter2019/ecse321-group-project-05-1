@@ -7,10 +7,10 @@
 <input type= "number" v-model="idstudent" placeholder="Student ID">
 </td>
 </tr>
-<tr>
-<tr>
-<button @click="returningid(idstudent)">Go to my Dashboard</button>
+  <tr>
+<h5 id="notvalid"></h5>
 </tr>
+<button @click="returningid(idstudent)">Go to my Dashboard</button>
 </table>
 </div>
 </template> 
@@ -62,13 +62,19 @@ methods: {
     const response = await fetch("https://cryptic-coast-32220.herokuapp.com/studentsAll/"+idstudent)
     .then(response => response.json());
        const body = await response.name;
+       console.log(response.isEnrolled)
+       console.log (response.name)
         this.name = body;
-    this.$router.push({path:'/dashboard/'+idstudent+'/'+ this.name})
-        console.log(this.name)
+        if(response.isEnrolled== true) {  
+         this.$router.push({path:'/dashboard/'+idstudent+'/'+ this.name})
+        }
+        else if(response.message="There is no student associated with that id!"){
+      document.getElementById("notvalid").innerHTML = "This is not a valid ID"
     
+    }}
    // var progress=this.progress
 
 }
 }
-}
+
 </script>

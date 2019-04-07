@@ -27,7 +27,7 @@ export default new Router({
    component: welcomenoo
   },
 {
-     path: '/addcoopnew',
+     path: '/addcoopnew/:id/',
      name: 'addcoopnew',
      component: addcoopnew
 },
@@ -35,6 +35,11 @@ export default new Router({
      path: '/dashboard/:id/:name/',
      name: 'dashboard',
      component: dashboard
+},
+{
+  path: '/dashboard/:id/:name/:coopid/',
+  name: 'dashboard',
+  component: dashboard
 },
 {   path: '/dashboard',
     name:'/dashboard',

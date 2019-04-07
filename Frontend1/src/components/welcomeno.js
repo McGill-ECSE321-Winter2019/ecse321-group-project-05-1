@@ -33,7 +33,7 @@ methods: {
       console.log(response.data.name)
       // JSON responses are automatically parsed.
       this.students.push(response.data)})
-
+      this.$router.push({path:'/addcoopnew/'+Id})
     
   }
 }

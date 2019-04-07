@@ -15,11 +15,11 @@
 </tr> 
 <tr>
 <td>Start Date</td>
-<td><input type="text" v-model="startdate" placeholder="01/01/2019"></td>
+<td><input type="date" v-model="startdate" placeholder="01/01/2019"></td>
 </tr>
 <tr>
 <td>End Date</td>
-<td><input type="text" v-model="enddate" placeholder="01/05/2019"></td>
+<td><input type="date" v-model="enddate" placeholder="01/05/2019"></td>
 </tr>
 <tr>
 <td>Semester</td>

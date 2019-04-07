@@ -29,10 +29,9 @@ export default {
       name: '',
     }
   },
-//created: function(){
- // const p1=new studentDto('TUSHAR','tushar.agarwal@mail.mcgill.ca', '2234')
- // this.students=[p1]
-//},
+created: function(){
+  this.fkstudentmcgillid= this.$route.params.id;
+},
 methods: {
   createcoop: async function (coopid, location, startdate, enddate, semester, companyname, workpermit, employercontract, instructorid, fkstudentmcgillid) {
       const response = await fetch("https://cryptic-coast-32220.herokuapp.com/studentsAll/"+fkstudentmcgillid)
@@ -53,7 +52,7 @@ methods: {
     );
     const data = await response1.json();
     console.log(data);  
-    this.$router.push({path:'/dashboard/'+fkstudentmcgillid+'/'+ this.name})
+    this.$router.push({path:'/dashboard/'+fkstudentmcgillid+'/'+ this.name+'/'+coopid})
 }
 }
 }
