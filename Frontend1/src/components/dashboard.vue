@@ -4,9 +4,9 @@
           <table id="head" align="left" >
 <tr>
 <td>
-<h3 align=center id=dashboard1>Welcome {{name}}</h3>
+<h3 align=center id=dashboard1>Welcome {{name}},</h3>
 </td>
-<td><h3 align=right id=dashboard2>Student ID: {{id}}</h3></td></tr>
+<td><h3 id=dashboard2>ID: {{id}}</h3></td></tr>
 </table>
 <ul>
   <li ><h5><a class="active">Dashboard</a></h5></li>
@@ -30,9 +30,9 @@ Your Co-op progress is {{progress}}%</h3>
         <table id="head" align="left" >
 <tr>
 <td>
-<h3 align=left id=dashboard1>Welcome {{name}}</h3>
+<h3 align=left id=dashboard1>Welcome {{name}},</h3>
 </td>
-<td><h3 align=right id=dashboard2>Student ID: {{id}}</h3></td></tr>
+<td><h3 id=dashboard2>ID: {{id}}</h3></td></tr>
 </table>
 <ul>
   <li button @click="dashboard =!dashboard, initialreportnew =!initialreportnew"><h5><a>Dashboard</a></h5></li>
@@ -61,9 +61,9 @@ Your Co-op progress is {{progress}}%</h3>
 <table id="head" align="left" >
 <tr>
 <td>
-<h3 align=left id=dashboard1>Welcome {{name}} </h3>
+<h3 align=left id=dashboard1>Welcome {{name}}, </h3>
 </td>
-<td><h3 align=right id=dashboard2> Student ID: {{id}}</h3></td></tr>
+<td><h3 id=dashboard2> ID: {{id}}</h3></td></tr>
 </table>
 <ul>
   <li button @click="dashboard =!dashboard, technicalreport=!technicalreport"><h5><a>Dashboard</a></h5></li>
@@ -90,9 +90,9 @@ Your Co-op progress is {{progress}}%</h3>
     <table id="head" align="left" >
 <tr>
 <td>
-<h3 align=left id=dashboard1>Welcome {{name}}</h3>
+<h3 align=left id=dashboard1>Welcome {{name}},</h3>
 </td>
-<td><h3 align=right id=dashboard2>Student ID: {{id}}</h3></td></tr>
+<td><h3 id=dashboard2>ID: {{id}}</h3></td></tr>
 </table>
 <ul>
   <li button @click="dashboard =!dashboard, evaluationreportnew=!evaluationreportnew"><h5><a>Dashboard</a></h5></li>
@@ -130,9 +130,9 @@ Your Co-op progress is {{progress}}%</h3>
   <table id="head" align="left" >
 <tr>
 <td>
-<h3 align=left id=dashboard1>Welcome {{name}}</h3>
+<h3 align=left id=dashboard1>Welcome {{name}},</h3>
 </td>
-<td><h3 align=right id=dashboard2>Student ID: {{id}}</h3></td></tr>
+<td><h3 id=dashboard2>ID: {{id}}</h3></td></tr>
 </table>
 <ul>
   <li button @click="dashboard =!dashboard, viewcoop=!viewcoop"><h5><a>Dashboard</a></h5></li>
@@ -177,7 +177,7 @@ height:200%;}
 #head{background-color:black}
 #head{width:100%}
 #dashboard1{color:white; margin-left: 60%}
-#dashboard2{color:white}
+#dashboard2{color:white;}
 h2{color:white}
 h2{padding-right:20px}
 #router{padding: 0px 16px}
