@@ -17,15 +17,19 @@
 </tr> 
 <tr>
 <td>Start Date</td>
-<td><input type="text" v-model="startdate" placeholder="01/01/2019"></td>
+<td><input type="date" v-model="startdate" placeholder="01/01/2019"></td>
 </tr>
 <tr>
 <td>End Date</td>
-<td><input type="text" v-model="enddate" placeholder="01/05/2019"></td>
+<td><input type="date" v-model="enddate" placeholder="01/05/2019"></td>
 </tr>
 <tr>
 <td>Semester</td>
-<td><input type="text" v-model="semester" placeholder="Fall/Summer/Winter "></td>
+<td><select name="semesterlist" form="sesmesterform" v-model="semester" aria-placeholder="Choose Sesmester">
+  <option value="Fall">Fall</option>
+  <option value="Summer">Summer</option>
+  <option value="Winter">Winter</option>
+</select></td>
 </tr>
 <tr>
 <td>Company Name</td>
@@ -33,7 +37,11 @@
 </tr>
 <tr>
 <td>Work Permit</td>
-<td><input type="text" v-model="workpermit" placeholder="true OR false"></td>
+<td><select name="semesterlist" form="sesmesterform" v-model="workpermit">
+  <option value="true">True</option>
+  <option value="false">False</option>
+  </select>
+  </td>
 </tr>
 <tr>
 <td>Employer Contract</td>
@@ -45,7 +53,7 @@
 </tr>
 <tr>
 <td>Foreign Key McGill</td>
-<td><input type="number" v-model="fkstudentmcgillid" placeholder="Foreign key"></td>
+<td><input type="number" v-model="fkstudentmcgillid" placeholder="student"></td>
 </tr>
 <tr>
 <td></td>

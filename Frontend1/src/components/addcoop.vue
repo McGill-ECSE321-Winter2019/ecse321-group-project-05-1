@@ -23,7 +23,11 @@
 </tr>
 <tr>
 <td>Semester</td>
-<td><input type="text" v-model="semester" placeholder="Fall/Summer/Winter "></td>
+<td><select name="carlist" form="carform" v-model="semester">
+  <option value="Fall">Fall</option>
+  <option value="Summer">Summer</option>
+  <option value="Winter">Winter</option>
+</select></td>
 </tr>
 <tr>
 <td>Company Name</td>
