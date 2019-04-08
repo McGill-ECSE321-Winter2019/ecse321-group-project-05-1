@@ -58,7 +58,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vu
 |Tushar            |  35 hours| Adding Secure authentication and enhancing UI experience  |
 |Archit            |  25 hours| Travis FrontEnd and User Documentation Report       |
 |Kathy             |  15 hours|Documentation & Project Wiki  |
-|Mert              |    hours|Documentation        |
+|Mert              |  15 hours|Documentation        | Project Management
 
 ## File Location 
 - Link to our REST controller class are included in the Backend folder under file controller
