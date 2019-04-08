@@ -1,4 +1,6 @@
-language: java
+matrix:
+  include:
+- language: java
 script:
 - ./gradlew build
 deploy:
@@ -6,3 +8,22 @@ deploy:
   api_key:
     secure: pRjXSpKQtY7TNjWZkvu6TLhxVOetDbXzGl/I/PEkGwBb5l46xqs09xSFHFg2i0ixfZH7w/HX/hMxPesBUt+v742XKHtKOld2YVT0P31xMAv68XjYMfP9TJf4Us3z5OXbu6gNmAtmPjqSvsy3zw7DH0mB766Eerg4AidU2auRj++Wz2E4JdOCjA4Z8JFtE0UlkNFgUJIbewEhOSNe8KQmptHwZawpDGU5v3a+inArmIwExUAiYfNHLZJ59Ef8Xo8dDiVtKI4DuC+4tPWVQ2uznywzAuj2kbeUsFKefYPKbU/Arb3Nw0J+fqvA4ux/WO5sYIJz3zggCPdFXcr0bS5BhGXTGfoDChvH+viFAe6GPpBJwWArf0G9O3mXNdn0sGy/ZO7Pvz5Fu6FgNmQqT36+KyxE5O20uHmPwxGmamT3FwhFF4mUSuwcn39NknH4Uo/9oCqYO5hFgC3gd6Bg7KToX9XVsl7yvDWTiGzqC1stAxdyBzVltJdkW5jiS+6QAVY/9IDo5Y6ik4zPBAWlTCFLFZ497jtGYIEhit+m/K+ia9MIO6xo6lQtp/T3r7pxQnW9CM5+n6iKj7TdbNGRFNviog4zXQUX9bqG2hR7Oh5ihzChbgM0QbFSmiRapevgqkG0I+gSdLAM6Cv46uDslYlp7fKDM+WLNGr9quEI5NjTAdE=
   app: cryptic-coast-32220
+
+- language: node_js
+      node_js:
+        - "6"
+
+      before_install:
+        - cd Frontend1
+        - npm install
+
+      script:
+        - npm run build
+        
+      deploy:
+       provider: heroku
+       api_key:
+         secure: 008460f1-8d53-4401-9906-289b3ee8e5e7
+       app: frontend-take2-murmur
+       on:
+         repo: McGill-ECSE321-Winter2019/ecse321-group-project-05-1
