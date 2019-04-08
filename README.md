@@ -10,7 +10,7 @@
 
 
 ## About
-The Co-operator is a co-op management tool integrating features from both myCourses and myFuture. Group 5 mainly focuses on developing from the student viewpoint. Keeping this in mind, the fourth deliverable includes: 
+The Co-operator is a co-op management tool integrating features from both myCourses and myFuture. Group 5 focuses on developing from the student viewpoint. Keeping this in mind, the fourth deliverable includes: 
 
 1. User Documentation
 2. Integrated System 
