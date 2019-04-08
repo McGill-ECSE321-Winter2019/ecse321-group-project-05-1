@@ -56,7 +56,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vu
 |------------------|-----------|----------------------- |
 |Salman            |    hours|        |
 |Tushar            |  35 hours| Adding Secure authentication and enhancing UI experience  |
-|Archit            |    hours|        |
+|Archit            |  25 hours| Travis FrontEnd and User Documentation Report       |
 |Kathy             |    hours|Documentation & Project Wiki  |
 |Mert              |    hours|Documentation        |
 
@@ -68,6 +68,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vu
 - Link to our Test Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Software-Quality-Assurance-Report
 - Our latest build runs perfectly fine on Travis. Continuous Integration is successful too. The latest version of the app (with BackEnd REST added) is available on the link above. Refer to Wiki documentation to see how to access those REST methods. 
 - Link to our Architecture Model: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Architecture-Model
+- Link to our User Documentation Report: https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki
 
 ## Front End Explanation
  - FrontEnd Heroku is deployed correctly now. Please visit https://frontend-take2-murmur.herokuapp.com/#/. We also ensured that if you create any new student (or do anything on the frontend), it gets stored in the database. For ex, create a new student. Go to Postman or Rest Client and create a GET request with http://cryptic-coast-32220.herokuapp.com/students . You will see that the student you have created shows up.
@@ -78,7 +79,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vu
  - New Page added to menu for showing previously submitted document links and instructor ID. 
  - As a new student, you only need to put your McGill ID once.
  - As a new student, you don’t need to remember your COOPID through the dashboard.
- - As a returning student, you need to only enter COOPID once,and the system will remember the ID till you logout.
+ - As a returning student, you need to only enter COOPID once, and the system will remember the ID till you logout.
  - Fixed a bug where "Welcome Student" was not displayed when the frontend was deployed to heroku!
  - Enhanced UI, by adding calender and options on the "addcoop" page. Previously they were all text fields.
  - New Screenshots and Main User Documentation can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/User-Documentation
