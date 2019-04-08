@@ -76,7 +76,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vu
  - Version one screenshots can be found at https://github.com/McGill-ECSE321-Winter2019/ecse321-group-project-05-1/wiki/Frontend-Screenshots
  ## New in Front End Version 2!
  - Secure login for authorization added for returning students.
- - New Page added to menu for showing previously submitted document links and instructor ID. 
+ - New Page added to menu for showing previously submitted document links and instructor ID. (Unique Feature)  
  - As a new student, you only need to put your McGill ID once.
  - As a new student, you don’t need to remember your COOPID through the dashboard.
  - As a returning student, you need to only enter COOPID once, and the system will remember the ID till you logout.
