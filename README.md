@@ -57,7 +57,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vu
 |Salman            |    hours|        |
 |Tushar            |  35 hours| Adding Secure authentication and enhancing UI experience  |
 |Archit            |  25 hours| Travis FrontEnd and User Documentation Report       |
-|Kathy             |    hours|Documentation & Project Wiki  |
+|Kathy             |  15 hours|Documentation & Project Wiki  |
 |Mert              |    hours|Documentation        |
 
 ## File Location 
