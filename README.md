@@ -54,7 +54,7 @@ Tools that were used for this Deliverable include: Gradle, Heroku, Travis CI, Vu
 
 |Team member's name|Total hours|Responsibility          |
 |------------------|-----------|----------------------- |
-|Salman            |    hours|        |
+|Salman            |  15 hours| Fixing backend issues       |
 |Tushar            |  35 hours| Adding Secure authentication and enhancing UI experience  |
 |Archit            |  25 hours| Travis FrontEnd and User Documentation Report       |
 |Kathy             |  15 hours|Documentation & Project Wiki  |
